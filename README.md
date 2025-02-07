@@ -1,4 +1,4 @@
-# 2月7日免费VPN节点 | 18M/S|2025年SSR/Shadowrocket/Clash/V2ray免费订阅链接地址  更新时间 2025-02-07 07:23:40
+# 2月8日免费VPN节点 | 22.1M/S|2025年V2ray/Shadowrocket/Clash/SSR免费订阅链接地址  更新时间 2025-02-08 04:45:23
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://freevpnnode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://freevpnnode.github.io/uploads/2025/02/0-20250207.yaml
-- https://freevpnnode.github.io/uploads/2025/02/1-20250207.yaml
-- https://freevpnnode.github.io/uploads/2025/02/2-20250207.yaml
-- https://freevpnnode.github.io/uploads/2025/02/3-20250207.yaml
-- https://freevpnnode.github.io/uploads/2025/02/4-20250207.yaml
+- https://freevpnnode.github.io/uploads/2025/02/0-20250208.yaml
+- https://freevpnnode.github.io/uploads/2025/02/1-20250208.yaml
+- https://freevpnnode.github.io/uploads/2025/02/2-20250208.yaml
+- https://freevpnnode.github.io/uploads/2025/02/3-20250208.yaml
+- https://freevpnnode.github.io/uploads/2025/02/4-20250208.yaml
 
 ### V2ray订阅链接
 
-- https://freevpnnode.github.io/uploads/2025/02/0-20250207.txt
-- https://freevpnnode.github.io/uploads/2025/02/1-20250207.txt
-- https://freevpnnode.github.io/uploads/2025/02/2-20250207.txt
-- https://freevpnnode.github.io/uploads/2025/02/3-20250207.txt
-- https://freevpnnode.github.io/uploads/2025/02/4-20250207.txt
+- https://freevpnnode.github.io/uploads/2025/02/0-20250208.txt
+- https://freevpnnode.github.io/uploads/2025/02/1-20250208.txt
+- https://freevpnnode.github.io/uploads/2025/02/2-20250208.txt
+- https://freevpnnode.github.io/uploads/2025/02/3-20250208.txt
+- https://freevpnnode.github.io/uploads/2025/02/4-20250208.txt
 
 ### Sing-box订阅链接
 
-- https://freevpnnode.github.io/uploads/2025/02/20250207.json
+- https://freevpnnode.github.io/uploads/2025/02/20250208.json
 
 ## 更多clash节点订阅 ：
 
