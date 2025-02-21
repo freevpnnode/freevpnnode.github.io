@@ -2,23 +2,23 @@
 <html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://freevpnnode.github.io/news/article-59265.htm" />
+        <link rel="canonical" href="https://freevpnnode.github.io/news/article-60411.htm" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>feign实现微服务之间的远程调用</title>
-        <meta name="description" content="原因：RestTemplate存在代码可读性差，编程体验不统一，参数复杂URL难以维护等缺点，因此可以用Feign替代RestTemplate实现微服务之间的远程调用。步骤如下： 1.在需要远程调用的" />
+    <title>Vue3实践setup函数详解</title>
+        <meta name="description" content="setup() 函数是Vue3.0中，专门为组件提供的新属性。它为基于Composition API 的新特性提供了统一的入口。 在Vue3中，定义methods、watch、computed、dat" />
         <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
 
     <meta name="author" content="Free VPN Node节点机场订阅官网">
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://freevpnnode.github.io/news/article-59265.htm" />
+    <meta property="og:url" content="https://freevpnnode.github.io/news/article-60411.htm" />
     <meta property="og:site_name" content="Free VPN Node节点机场订阅官网" />
-    <meta property="og:title" content="feign实现微服务之间的远程调用" />
-    <meta property="og:image" content="https://freevpnnode.github.io/uploads/20240922-1/7619a75e0c34e3cff335df8d42c8ac14.webp" />
-        <meta property="og:release_date" content="2025-02-19T06:36:53" />
-    <meta property="og:updated_time" content="2025-02-19T06:36:53" />
-        <meta property="og:description" content="原因：RestTemplate存在代码可读性差，编程体验不统一，参数复杂URL难以维护等缺点，因此可以用Feign替代RestTemplate实现微服务之间的远程调用。步骤如下： 1.在需要远程调用的" />
+    <meta property="og:title" content="Vue3实践setup函数详解" />
+    <meta property="og:image" content="https://freevpnnode.github.io/uploads/20240922-1/fe4c711ead34d2ee561adbc2f5cb1a0b.webp" />
+        <meta property="og:release_date" content="2025-02-21T09:20:16" />
+    <meta property="og:updated_time" content="2025-02-21T09:20:16" />
+        <meta property="og:description" content="setup() 函数是Vue3.0中，专门为组件提供的新属性。它为基于Composition API 的新特性提供了统一的入口。 在Vue3中，定义methods、watch、computed、dat" />
         
     <meta name="applicable-device" content="pc,mobile" />
     <meta name="renderer" content="webkit" />
@@ -27,7 +27,7 @@
     <meta name="robots" content="max-image-preview:large" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="feign实现微服务之间的远程调用">
+    <meta name="apple-mobile-web-app-title" content="Vue3实践setup函数详解">
     <meta name="format-detection" content="telephone=no">
 
     <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
@@ -105,7 +105,7 @@
         <div class="sub-banner">
             <div class="container">
                 <div class="text text-right">
-                    <h1 class="title">feign实现微服务之间的远程调用</h1>
+                    <h1 class="title">Vue3实践setup函数详解</h1>
                 </div>
                 <nav class="breadcrumb-outer" aria-label="breadcrumb">
                     <ol class="breadcrumb d-inline-flex">
@@ -125,10 +125,10 @@
                     <div class="row">
                         <div class="col-md-9">
                                             <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
-                  				  				  				<div id="content_views" class="htmledit_views"> <p>原因：RestTemplate存在代码可读性差，编程体验不统一，参数复杂URL难以维护等缺点，因此可以用Feign替代RestTemplate实现微服务之间的远程调用。步骤如下：</p> <p>1.在需要远程调用的微服务的pom文件中增加feign的依赖。</p> <pre><code class="language-java">&lt;dependency&gt;     &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;     &lt;artifactId&gt;spring-cloud-starter-openfeign&lt;/artifactId&gt; &lt;/dependency&gt;</code></pre> <p>2.在启动类上添加注解开启Feign的功能。@EnableFeignClients//开启feign的功能</p> <p>3.编写Feign的客户端（注意是接口）例子如下</p> <pre><code class="language-java">@FeignClient("userservice") //被调用服务名 public interface UserClient {     @GetMapping("/user/{id}")     User findById(@PathVariable("id") Long id);//被调用的方法 }</code></pre> <p>4.测试在测试类中自动注入编写的接口</p> <pre><code class="language-java">@Service public class OrderService {      @Autowired     private OrderMapper orderMapper;     @Autowired     private RestTemplate restTemplate;     @Autowired     private UserClient userClient;//编写的Feign接口      public Order queryOrderById(Long orderId) {         // 1.查询订单         Order order = orderMapper.findById(orderId);         //第一种方式：用restTemplate实现，代码编写不规范 /*        String url="http://localhost:8081/user/"+order.getUserId();         User user = restTemplate.getForObject(url, User.class);*/         //第二种方式：用feign实现远程调用是常用的方式         User user = userClient.findById(order.getUserId());         order.setUser(user);         // 4.返回         return order;     }</code></pre> <p>5.Feign的简单调用已经完成。总结一下：先引入依赖、启动类加上注解添加@EnableFeignClients注解 ，编写FeignClient接口 ，使用FeignClient中定义的方法代替RestTemplate。</p> <h2>注意点：feign支持自定义配置</h2> <p>1.修改配置文件yml文件可以更改feign的日志级别。例如：</p> <pre><code class="language-java">feign:     client:     config:        default: # 这里用default就是全局配置，如果是写服务名称，则是针对某个微服务的配置         loggerLevel: FULL #  日志级别</code></pre> <p>也可以用代码方式更改日志级别此处省略。</p> <p>以上是feign的简单使用，底层发起的http请求时默认的URLConnection，不支持连接池，为了提高性能应该用连接池代替默认的URLConnection。本文用Apache的HttpClient来演示。以下是步骤</p> <p>1.调用者的pom文件中引入依赖</p> <pre><code class="language-java">        &lt;!--httpClient的依赖 --&gt;         &lt;dependency&gt;             &lt;groupId&gt;io.github.openfeign&lt;/groupId&gt;             &lt;artifactId&gt;feign-httpclient&lt;/artifactId&gt;         &lt;/dependency&gt;</code></pre> <p>2.yml文件中修改feign的配置</p> <pre><code class="language-java"># 修改feign的日志级别 feign:   client:     config:       default: # default全局的配置         loggerLevel: BASIC # 日志级别，BASIC就是基本的请求和响应信息 # 开启feign对HttpClient的支持           httpclient:     enabled: true # 开启feign对HttpClient的支持     max-connections: 200 # 最大的连接数     max-connections-per-route: 50 # 每个路径的最大连接数</code></pre> <p>3.结束，feign的最佳实践此处略。</p> </div> 			                <div class="clearfix"></div>
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p><strong>setup()</strong> 函数是Vue3.0中，专门为组件提供的新属性。它为基于<strong>Composition API</strong> 的新特性提供了统一的入口。</p> <pre><code>在Vue3中，定义methods、watch、computed、data数据都放在了setup()函数中</code></pre> <h5><a id="1_4" rel="nofollow"></a>1.执行时间</h5> <pre><code>setup函数会在生命周期的beforeCreate之前执行</code></pre> <p>代码验证</p> <pre><code class="prism language-javascript">	      Vue<span class="token punctuation">.</span><span class="token function">createApp</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span><span class="token function">beforeCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'beforeCreate'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'created'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'setup'</span><span class="token punctuation">)</span><span class="token keyword">let</span> name<span class="token operator">=</span><span class="token string">'张三'</span><span class="token punctuation">;</span><span class="token keyword">let</span> age<span class="token operator">=</span><span class="token number">17</span><span class="token punctuation">;</span><span class="token keyword">return</span><span class="token punctuation">{<!-- --></span>                     name<span class="token punctuation">,</span>                     age<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span></code></pre> <p>控制台输出<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/0a676d061f8fd8f509244f2478fc02f4.jpg" alt="Vue3实践setup函数详解"></p> <h5><a id="2_props_29" rel="nofollow"></a>2.参数 props</h5> <pre><code>props是setup()函数的一个形参，组件接收的props数据可以在setup()函数内访问到。</code></pre> <p>在App.vue中（脚手架搭建…如果不知道请移动到<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/AIB_Kasic/article/details/120860727"  rel="nofollow">用vue-cli创建vue3.0项目</a>）</p> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span><span class="token operator">&lt;</span>HelloWorld msg<span class="token operator">=</span><span class="token string">"Welcome to Your Vue.js App"</span><span class="token operator">/</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span></code></pre> <p>在HelloWorld 组件中有如下代码</p> <pre><code class="prism language-javascript"><span class="token function">setup</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">,</span>context</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'setup参数'</span><span class="token punctuation">,</span>props<span class="token punctuation">,</span>context<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>控制台输出<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/92820232c8136263eb382a6d06a91eeb.jpg" alt="Vue3实践setup函数详解"></p> <pre><code>注意：在 setup() 函数中访问不到Vue的 this 实例</code></pre> <h5><a id="2_context_50" rel="nofollow"></a>2.参数 context</h5> <pre><code>context 是 setup() 的第二个形参，它是一个上下文对象，可以通过 context 来访问Vue的实例 this 。</code></pre> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-58774.htm">小型饲料颗粒机价格（小型饲料颗粒机价格是多少）</a></p>
-                                        <p>下一个：<a href="/news/article-59266.htm">快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具</a></p>
+                                        <p>上一个：<a href="/news/article-59836.htm">动物医院实践心得5000字左右作文三年级 动物医院实践心得5000字左右作文三年级下册</a></p>
+                                        <p>下一个：<a href="/news/article-60412.htm">南京哪里领养宠物比较好的地方（南京哪里有领养宠物的地方）</a></p>
                                     </div>
                                         </div>
                         <div class="col-md-3">
@@ -138,16 +138,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-56417.htm" title="动物疫苗工艺规程规程标准规范 动物疫苗工艺流程">动物疫苗工艺规程规程标准规范 动物疫苗工艺流程</a></li>
-                        <li class="py-2"><a href="/news/article-60411.htm" title="Vue3实践setup函数详解">Vue3实践setup函数详解</a></li>
-                        <li class="py-2"><a href="/news/article-51024.htm" title="动物医院评价怎么写 动物医院评价怎么写范文">动物医院评价怎么写 动物医院评价怎么写范文</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-2-13-free-subscribe-node.htm" title="2月13日免费VPN节点 | 18.6M/S|2025年Clash/Shadowrocket/V2ray/SSR免费订阅链接地址">2月13日免费VPN节点 | 18.6M/S|2025年Clash/Shadowrocket/V2ray/SSR免费订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-2-21-node-share-links.htm" title="2月21日免费VPN节点 | 20.1M/S|2025年Shadowrocket/SSR/Clash/V2ray免费订阅链接地址">2月21日免费VPN节点 | 20.1M/S|2025年Shadowrocket/SSR/Clash/V2ray免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-9-free-node-subscribe.htm" title="2月9日免费VPN节点 | 18M/S|2025年Shadowrocket/V2ray/SSR/Clash免费订阅链接地址">2月9日免费VPN节点 | 18M/S|2025年Shadowrocket/V2ray/SSR/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-59835.htm" title="SpringBoot整合MybatisPlus基本的增删改查，保姆级教程_在线工具">SpringBoot整合MybatisPlus基本的增删改查，保姆级教程_在线工具</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-2-15-node-share-links.htm" title="2月15日免费VPN节点 | 20.9M/S|2025年Shadowrocket/SSR/V2ray/Clash免费订阅链接地址">2月15日免费VPN节点 | 20.9M/S|2025年Shadowrocket/SSR/V2ray/Clash免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-2-14-clash-v2ray-ss-ssr.htm" title="2月14日免费VPN节点 | 22.4M/S|2025年Clash/V2ray/Shadowrocket/SSR免费订阅链接地址">2月14日免费VPN节点 | 22.4M/S|2025年Clash/V2ray/Shadowrocket/SSR免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-54222.htm" title="如果我们在CONCAT_WS()函数中同时使用NULL作为参数，参数之一和分隔符，那么MySQL将返回什么？">如果我们在CONCAT_WS()函数中同时使用NULL作为参数，参数之一和分隔符，那么MySQL将返回什么？</a></li>
-                        <li class="py-2"><a href="/news/article-52077.htm" title="宠物用品厂家直销（宠物用品公司排行）">宠物用品厂家直销（宠物用品公司排行）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-2-16-free-node-subscribe-links.htm" title="2月16日免费VPN节点 | 22.3M/S|2025年SSR/Clash/V2ray/Shadowrocket免费订阅链接地址">2月16日免费VPN节点 | 22.3M/S|2025年SSR/Clash/V2ray/Shadowrocket免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-11-node-share-links.htm" title="2月11日免费VPN节点 | 22M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址">2月11日免费VPN节点 | 22M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-58773.htm" title="医院妇产科领养孩子送房子（医院妇产科领养孩子送房子可以吗）">医院妇产科领养孩子送房子（医院妇产科领养孩子送房子可以吗）</a></li>
+                        <li class="py-2"><a href="/news/article-52597.htm" title="合肥宠物救助站电话 合肥宠物救助站电话号码">合肥宠物救助站电话 合肥宠物救助站电话号码</a></li>
+                        <li class="py-2"><a href="/news/article-58774.htm" title="小型饲料颗粒机价格（小型饲料颗粒机价格是多少）">小型饲料颗粒机价格（小型饲料颗粒机价格是多少）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-17-node-share-links.htm" title="2月17日免费VPN节点 | 21.9M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址">2月17日免费VPN节点 | 21.9M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-55317.htm" title="如何在vue3使用骨架屏">如何在vue3使用骨架屏</a></li>
                     </ul>
     </div>
 </div>
