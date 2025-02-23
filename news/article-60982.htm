@@ -1,0 +1,205 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freevpnnode.github.io/news/article-60982.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>基于Spring接口，集成Caffeine+Redis两级缓存</title>
+        <meta name="description" content="前言  在上一篇文章Redis+Caffeine两级缓存，让访问速度纵享丝滑中，我们介绍了3种整合Caffeine和Redis作为两级缓存使用的方法，虽然说能够实现功能，但实现手法还是太粗糙了，并且遗" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free VPN Node节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freevpnnode.github.io/news/article-60982.htm" />
+    <meta property="og:site_name" content="Free VPN Node节点机场订阅官网" />
+    <meta property="og:title" content="基于Spring接口，集成Caffeine+Redis两级缓存" />
+    <meta property="og:image" content="https://freevpnnode.github.io/uploads/20240922-1/2847c9095b9bf0532495525f70075bc6.webp" />
+        <meta property="og:release_date" content="2025-02-22T07:11:25" />
+    <meta property="og:updated_time" content="2025-02-22T07:11:25" />
+        <meta property="og:description" content="前言  在上一篇文章Redis+Caffeine两级缓存，让访问速度纵享丝滑中，我们介绍了3种整合Caffeine和Redis作为两级缓存使用的方法，虽然说能够实现功能，但实现手法还是太粗糙了，并且遗" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="基于Spring接口，集成Caffeine+Redis两级缓存">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2KW97MK5T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C2KW97MK5T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Free VPN Node                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">基于Spring接口，集成Caffeine+Redis两级缓存</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                  				  				  				<blockquote> <p>前言</p> </blockquote> <p>在上一篇文章<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/trunks2008/p/16065501.html"  target="_blank" rel="nofollow">Redis+Caffeine两级缓存，让访问速度纵享丝滑</a>中，我们介绍了3种整合<code>Caffeine</code>和<code>Redis</code>作为两级缓存使用的方法，虽然说能够实现功能，但实现手法还是太粗糙了，并且遗留了一些问题没有处理。本文将在上一篇的基础上，围绕两个方面进行进一步的改造：</p> <ul> <li><code>JSR107</code>定义了缓存使用规范，spring中提供了基于这个规范的接口，所以我们可以直接使用spring中的接口进行<code>Caffeine</code>和<code>Redis</code>两级缓存的整合改造</li> <li>在分布式环境下，如果一台主机的本地缓存进行修改，需要通知其他主机修改本地缓存，解决分布式环境下本地缓存一致性问题</li> </ul> <p>好了，在明确了需要的改进问题后，下面我们开始正式修改。</p> <h2 id="改造">改造</h2> <p>在上篇文章的<code>v3</code>版本中，我们使用自定义注解的方式实现了两级缓存通过<strong>一个注解</strong>管理的功能。本文我们换一种方式，直接通过扩展spring提供的接口来实现这个功能，在进行整合之前，我们需要简单了解一下<code>JSR107</code>缓存规范。</p> <h3 id="jsr107-规范">JSR107 规范</h3> <p>在<code>JSR107</code>缓存规范中定义了5个核心接口，分别是<code>CachingProvider</code>,<code>CacheManager</code>,<code>Cache</code>,<code>Entry</code>和<code>Expiry</code>，参考下面这张图，可以看到除了<code>Entry</code>和<code>Expiry</code>以外，从上到下都是一对多的包含关系。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/3f7fb9d49d3aa44aabc873b7c56306fc.jpg" alt="基于Spring接口，集成Caffeine+Redis两级缓存"></p> <p>从上面这张图我们可以看出，一个应用可以创建并管理多个<code>CachingProvider</code>，同样一个<code>CachingProvider</code>也可以管理多个<code>CacheManager</code>，缓存管理器<code>CacheManager</code>中则维护了多个<code>Cache</code>。</p> <p><code>Cache</code>是一个类似<code>Map</code>的数据结构，<code>Entry</code>就是其中存储的每一个<code>key-value</code>数据对，并且每个<code>Entry</code>都有一个过期时间<code>Expiry</code>。而我们在使用spring集成第三方的缓存时，只需要实现<code>Cache</code>和<code>CacheManager</code>这两个接口就可以了，下面分别具体来看一下。</p> <h3 id="cache">Cache</h3> <p>spring中的<code>Cache</code>接口规范了缓存组件的定义，包含了缓存的各种操作，实现具体缓存操作的管理。例如我们熟悉的<code>RedisCache</code>、<code>EhCacheCache</code>等，都实现了这个接口。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/6b89facf5d9ac74be5a62beec7a7d077.jpg" alt="基于Spring接口，集成Caffeine+Redis两级缓存"></p> <p>在<code>Cache</code>接口中，定义了<code>get</code>、<code>put</code>、<code>evict</code>、<code>clear</code>等方法，分别对应缓存的存入、取出、删除、清空操作。不过我们这里不直接使用<code>Cache</code>接口，上面这张图中的<code>AbstractValueAdaptingCache</code>是一个抽象类，它已经实现了<code>Cache</code>接口，是spring在<code>Cache</code>接口的基础上帮助我们进行了一层封装，所以我们直接继承这个类就可以。</p> <p>继承<code>AbstractValueAdaptingCache</code>抽象类后，除了创建<code>Cache</code>的构造方法外，还需要实现下面的几个方法：</p> <pre><code class="language-java">// 在缓存中实际执行查找的操作，父类的get()方法会调用这个方法 protected abstract Object lookup(Object key);  // 通过key获取缓存值，如果没有找到，会调用valueLoader的call()方法 public &lt;T&gt; T get(Object key, Callable&lt;T&gt; valueLoader);  // 将数据放入缓存中 public void put(Object key, Object value);  // 删除缓存 public void evict(Object key);  // 清空缓存中所有数据 public void clear();  // 获取缓存名称，一般在CacheManager创建时指定 String getName();  // 获取实际使用的缓存 Object getNativeCache();</code></pre> <p>因为要整合<code>RedisTemplate</code>和<code>Caffeine</code>的<code>Cache</code>，所以这些都需要在缓存的构造方法中传入，除此之外构造方法中还需要再传出缓存名称<code>cacheName</code>，以及在配置文件中实际配置的一些缓存参数。先看一下构造方法的实现：</p> <pre><code class="language-java">public class DoubleCache extends AbstractValueAdaptingCache {     private String cacheName;     private RedisTemplate&lt;Object, Object&gt; redisTemplate;     private Cache&lt;Object, Object&gt; caffeineCache;     private DoubleCacheConfig doubleCacheConfig;      protected DoubleCache(boolean allowNullValues) {         super(allowNullValues);     }      public DoubleCache(String cacheName,RedisTemplate&lt;Object, Object&gt; redisTemplate,                        Cache&lt;Object, Object&gt; caffeineCache,                        DoubleCacheConfig doubleCacheConfig){         super(doubleCacheConfig.getAllowNull());         this.cacheName=cacheName;         this.redisTemplate=redisTemplate;         this.caffeineCache=caffeineCache;         this.doubleCacheConfig=doubleCacheConfig;     }     //... }</code></pre> <p>抽象父类的构造方法中只有一个<code>boolean</code>类型的参数<code>allowNullValues</code>，表示是否允许缓存对象为<code>null</code>。除此之外，<code>AbstractValueAdaptingCache</code>中还定义了两个包装方法来配合这个参数进行使用，分别是<code>toStoreValue</code>和<code>fromStoreValue</code>，特殊用途是用于在缓存<code>null</code>对象时进行包装、以及在获取时进行解析并返回。</p> <p>我们之后会在<code>CacheManager</code>中调用后面这个自己实现的构造方法，来实例化<code>Cache</code>对象，参数中<code>DoubleCacheConfig</code>是使用<code>@ConfigurationProperties</code>读取的yml配置文件封装的数据对象，会在后面使用。</p> <p>当一个方法添加了<code>@Cacheable</code>注解时，执行时会先调用父类<code>AbstractValueAdaptingCache</code>中的<code>get(key)</code>方法，它会再调用我们自己实现的<code>lookup</code>方法。在实际执行查找操作的<code>lookup</code>方法中，我们的逻辑仍然是先查找<code>Caffeine</code>、没有找到时再查找<code>Redis</code>：</p> <pre><code class="language-java">@Override protected Object lookup(Object key) {     // 先从caffeine中查找     Object obj = caffeineCache.getIfPresent(key);     if (Objects.nonNull(obj)){         log.info("get data from caffeine");         return obj;     }      //再从redis中查找     String redisKey=this.name+":"+ key;     obj = redisTemplate.opsForValue().get(redisKey);     if (Objects.nonNull(obj)){         log.info("get data from redis");         caffeineCache.put(key,obj);     }     return obj; }</code></pre> <p>如果<code>lookup</code>方法的返回结果不为<code>null</code>，那么就会直接返回结果给调用方。如果返回为<code>null</code>时，就会执行原方法，执行完成后调用<code>put</code>方法，将数据放入缓存中。接下来我们实现<code>put</code>方法：</p> <pre><code class="language-java">@Override public void put(Object key, Object value) {     if(!isAllowNullValues() &amp;&amp; Objects.isNull(value)){         log.error("the value NULL will not be cached");         return;     }      //使用 toStoreValue(value) 包装，解决caffeine不能存null的问题     caffeineCache.put(key,toStoreValue(value));      // null对象只存在caffeine中一份就够了，不用存redis了     if (Objects.isNull(value))         return;      String redisKey=this.cacheName +":"+ key;     Optional&lt;Long&gt; expireOpt = Optional.ofNullable(doubleCacheConfig)             .map(DoubleCacheConfig::getRedisExpire);     if (expireOpt.isPresent()){         redisTemplate.opsForValue().set(redisKey,toStoreValue(value),                 expireOpt.get(), TimeUnit.SECONDS);     }else{         redisTemplate.opsForValue().set(redisKey,toStoreValue(value));     } }</code></pre> <p>上面我们对于是否允许缓存空对象进行了判断，能够缓存空对象的好处之一就是可以避免<strong>缓存穿透</strong>。需要注意的是，<code>Caffeine</code>中是不能直接缓存<code>null</code>的，因此可以使用父类提供的<code>toStoreValue()</code>方法，将它包装成一个<code>NullValue</code>类型。在取出对象时，如果是<code>NullValue</code>，也不用我们自己再去调用<code>fromStoreValue()</code>将这个包装类型还原，父类的<code>get</code>方法中已经帮我们做好了。</p> <p>另外，上面在<code>put</code>方法中缓存空对象时，只在<code>Caffeine</code>缓存中一份即可，可以不用在<code>Redis</code>中再存一份。</p> <p>缓存的删除方法<code>evict()</code>和清空方法<code>clear()</code>的实现就比较简单了，直接删除一跳或全部数据即可：</p> <pre><code class="language-java">@Override public void evict(Object key) {     redisTemplate.delete(this.cacheName +":"+ key);     caffeineCache.invalidate(key); }  @Override public void clear() {     Set&lt;Object&gt; keys = redisTemplate.keys(this.cacheName.concat(":*"));     for (Object key : keys) {         redisTemplate.delete(String.valueOf(key));     }     caffeineCache.invalidateAll(); }</code></pre> <p>获取缓存<code>cacheName</code>和实际缓存的方法实现：</p> <pre><code class="language-java">@Override public String getName() {     return this.cacheName; } @Override public Object getNativeCache() {     return this; }</code></pre> <p>最后，我们再来看一下带有两个参数的<code>get</code>方法，为什么把这个方法放到最后来说呢，因为如果我们只是使用注解来管理缓存的话，那么这个方法不会被调用到，简单看一下实现：</p> <pre><code class="language-java">@Override public &lt;T&gt; T get(Object key, Callable&lt;T&gt; valueLoader) {     ReentrantLock lock=new ReentrantLock();     try{         lock.lock();//加锁         Object obj = lookup(key);         if (Objects.nonNull(obj)){             return (T)obj;         }         //没有找到         obj = valueLoader.call();         put(key,obj);//放入缓存         return (T)obj;     }catch (Exception e){         log.error(e.getMessage());     }finally {         lock.unlock();     }     return null; }</code></pre> <p>方法的实现比较容易理解，还是先调用<code>lookup</code>方法寻找是否已经缓存了对象，如果没有找到那么就调用<code>Callable</code>中的<code>call</code>方法进行获取，并在获取完成后存入到缓存中去。至于这个方法如何使用，具体代码我们放在后面使用这一块再看。</p> <p>需要注意的是，这个方法的接口注释中强调了需要我们自己来保证方法同步，因此这里使用了<code>ReentrantLock</code>进行了加锁操作。到这里，<code>Cache</code>的实现就完成了，下面我们接着看另一个重要的接口<code>CacheManager</code>。</p> <h3 id="cachemanager">CacheManager</h3> <p>从名字就可以看出，<code>CacheManager</code>是一个缓存管理器，它可以被用来管理一组<code>Cache</code>。在上一篇文章的v2版本中，我们使用的<code>CaffeineCacheManager</code>就实现了这个接口，除此之外还有<code>RedisCacheManager</code>、<code>EhCacheCacheManager</code>等也都是通过这个接口实现。</p> <p>下面我们要自定义一个类实现<code>CacheManager</code>接口，管理上面实现的<code>DoubleCache</code>作为spring中的缓存使用。接口中需要实现的方法只有下面两个：</p> <pre><code class="language-java">//根据cacheName获取Cache实例，不存在时进行创建 Cache getCache(String name);  //返回管理的所有cacheName Collection&lt;String&gt; getCacheNames();</code></pre> <p>在自定义的缓存管理器中，我们要使用<code>ConcurrentHashMap</code>维护一组不同的<code>Cache</code>，再定义一个构造方法，在参数中传入已经在spring中配置好的<code>RedisTemplate</code>，以及相关的缓存配置参数：</p> <pre><code class="language-java">public class DoubleCacheManager implements CacheManager {     Map&lt;String, Cache&gt; cacheMap = new ConcurrentHashMap&lt;&gt;();     private RedisTemplate&lt;Object, Object&gt; redisTemplate;     private DoubleCacheConfig dcConfig;      public DoubleCacheManager(RedisTemplate&lt;Object, Object&gt; redisTemplate,                               DoubleCacheConfig doubleCacheConfig) {         this.redisTemplate = redisTemplate;         this.dcConfig = doubleCacheConfig;     }     //... }</code></pre> <p>然后实现<code>getCache</code>方法，逻辑很简单，先根据<code>name</code>从<code>Map</code>中查找对应的<code>Cache</code>，如果找到则直接返回，这个参数<code>name</code>就是上一篇文章中提到的<code>cacheName</code>，<code>CacheManager</code>根据它实现不同<code>Cache</code>的隔离。</p> <p>如果没有根据名称找到缓存的话，那么新建一个<code>DoubleCache</code>对象，并放入<code>Map</code>中。这里使用的<code>ConcurrentHashMap</code>的<code>putIfAbsent()</code>方法放入，避免重复创建<code>Cache</code>以及造成<code>Cache</code>内数据的丢失。具体代码如下：</p> <pre><code class="language-java">@Override public Cache getCache(String name) {     Cache cache = cacheMap.get(name);     if (Objects.nonNull(cache)) {         return cache;     }      cache = new DoubleCache(name, redisTemplate, createCaffeineCache(), dcConfig);     Cache oldCache = cacheMap.putIfAbsent(name, cache);     return oldCache == null ? cache : oldCache; }</code></pre> <p>在上面创建<code>DoubleCache</code>对象的过程中，需要先创建一个<code>Caffeine</code>的<code>Cache</code>对象作为参数传入，这一过程主要是根据实际项目的配置文件中的具体参数进行初始化，代码如下：</p> <pre><code class="language-java">private com.github.benmanes.caffeine.cache.Cache createCaffeineCache(){     Caffeine&lt;Object, Object&gt; caffeineBuilder = Caffeine.newBuilder();     Optional&lt;DoubleCacheConfig&gt; dcConfigOpt = Optional.ofNullable(this.dcConfig);     dcConfigOpt.map(DoubleCacheConfig::getInit)             .ifPresent(init-&gt;caffeineBuilder.initialCapacity(init));     dcConfigOpt.map(DoubleCacheConfig::getMax)             .ifPresent(max-&gt;caffeineBuilder.maximumSize(max));     dcConfigOpt.map(DoubleCacheConfig::getExpireAfterWrite)             .ifPresent(eaw-&gt;caffeineBuilder.expireAfterWrite(eaw,TimeUnit.SECONDS));     dcConfigOpt.map(DoubleCacheConfig::getExpireAfterAccess)             .ifPresent(eaa-&gt;caffeineBuilder.expireAfterAccess(eaa,TimeUnit.SECONDS));     dcConfigOpt.map(DoubleCacheConfig::getRefreshAfterWrite)             .ifPresent(raw-&gt;caffeineBuilder.refreshAfterWrite(raw,TimeUnit.SECONDS));     return caffeineBuilder.build(); }</code></pre> <p><code>getCacheNames</code>方法很简单，直接返回<code>Map</code>的<code>keySet</code>就可以了，代码如下：</p> <pre><code class="language-java">@Override public Collection&lt;String&gt; getCacheNames() {     return cacheMap.keySet(); }</code></pre> <h3 id="配置使用">配置&amp;使用</h3> <p>在<code>application.yml</code>文件中配置缓存的参数，代码中使用<code>@ConfigurationProperties</code>接收到<code>DoubleCacheConfig</code>类中：</p> <pre><code class="language-yml">doublecache:   allowNull: true   init: 128   max: 1024   expireAfterWrite: 30  #Caffeine过期时间   redisExpire: 60      #Redis缓存过期时间</code></pre> <p>配置自定义的<code>DoubleCacheManager</code>作为默认的缓存管理器：</p> <pre><code class="language-java">@Configuration public class CacheConfig {     @Autowired     DoubleCacheConfig doubleCacheConfig;      @Bean     public DoubleCacheManager cacheManager(RedisTemplate&lt;Object,Object&gt; redisTemplate,                                            DoubleCacheConfig doubleCacheConfig){         return new DoubleCacheManager(redisTemplate,doubleCacheConfig);     } }</code></pre> <p><code>Service</code>中的代码还是老样子，不需要在代码中手动操作缓存，只要直接在方法上使用<code>@Cache</code>相关注解即可：</p> <pre><code class="language-java">@Service @Slf4j @AllArgsConstructor public class OrderServiceImpl implements OrderService {     private final OrderMapper orderMapper;      @Cacheable(value = "order",key = "#id")     public Order getOrderById(Long id) {         Order myOrder = orderMapper.selectOne(new LambdaQueryWrapper&lt;Order&gt;()                 .eq(Order::getId, id));         return myOrder;     }      @CachePut(cacheNames = "order",key = "#order.id")     public Order updateOrder(Order order) {         orderMapper.updateById(order);         return order;     }      @CacheEvict(cacheNames = "order",key = "#id")     public void deleteOrder(Long id) {         orderMapper.deleteById(id);     }          //没有注解,使用get(key,callable)方法     public Order getOrderById2(Long id) {         DoubleCacheManager cacheManager = SpringContextUtil.getBean(DoubleCacheManager.class);         Cache cache = cacheManager.getCache("order");         Order order =(Order) cache.get(id, (Callable&lt;Object&gt;) () -&gt; {             log.info("get data from database");             Order myOrder = orderMapper.selectOne(new LambdaQueryWrapper&lt;Order&gt;()                     .eq(Order::getId, id));             return myOrder;         });         return order;     }     }</code></pre> <p>注意最后这个没有添加任何注解的方法，只有以这种方式调用时才会执行我们在<code>DoubleCache</code>中自己实现的<code>get(key,callable)</code>方法。到这里，基于<code>JSR107</code>规范和spring接口的两级缓存改造就完成了，下面我们看一下遗漏的第二个问题。</p> <h2 id="分布式环境改造">分布式环境改造</h2> <p>前面我们说了，在分布式环境下，可能会存在各个主机上一级缓存不一致的问题。当一台主机修改了本地缓存后，其他主机是没有感知的，仍然保持了之前的缓存，那么这种情况下就可能取到脏数据。既然我们在项目中已经使用了<code>Redis</code>，那么就可以使用它的发布/订阅功能来使各个节点的缓存进行同步。</p> <h3 id="定义消息体">定义消息体</h3> <p>在使用<code>Redis</code>发送消息前，需要先定义一个消息对象。其中的数据包括消息要作用于的<code>Cache</code>名称、操作类型、数据以及发出消息的源主机标识：</p> <pre><code class="language-java">@Data @NoArgsConstructor @AllArgsConstructor public class CacheMassage implements Serializable {     private static final long serialVersionUID = -3574997636829868400L;      private String cacheName;     private CacheMsgType type;  //标识更新或删除操作     private Object key;			     private Object value;     private String msgSource;   //源主机标识，用来避免重复操作 }</code></pre> <p>定义一个枚举来标识消息的类型，是要进行更新还是删除操作：</p> <pre><code class="language-java">public enum CacheMsgType {     UPDATE,     DELETE; }</code></pre> <p>消息体中的<code>msgSource</code>是添加的一个消息源主机的标识，添加这个是为了避免收到当前主机发送的消息后，再进行重复操作，也就是说收到本机发出的消息直接丢掉什么都不做就可以了。源主机标识这里使用的是主机ip加项目端口的方式，获取方法如下：</p> <pre><code class="language-java">public static String getMsgSource() throws UnknownHostException {     String host = InetAddress.getLocalHost().getHostAddress();     Environment env = SpringContextUtil.getBean(Environment.class);     String port = env.getProperty("server.port");     return host+":"+port; }</code></pre> <p>这样消息体的定义就完成了，之后只要调用<code>redisTemplate</code>的<code>convertAndSend</code>方法就可以把这个对象发布到指定的主题上了。</p> <h3 id="redis消息配置">Redis消息配置</h3> <p>要使用<code>Redis</code>的消息监听功能，需要配置两项内容：</p> <ul> <li><code>MessageListenerAdapter</code>：消息监听适配器，可以在其中指定自定义的监听代理类，并且可以自定义使用哪个方法处理监听逻辑</li> <li><code>RedisMessageListenerContainer</code>： 一个可以为消息监听器提供异步行为的容器，并且提供消息转换和分派等底层功能</li> </ul> <pre><code class="language-java">@Configuration public class MessageConfig {     public static final String TOPIC="cache.msg";          @Bean     RedisMessageListenerContainer container(MessageListenerAdapter listenerAdapter,                                             RedisConnectionFactory redisConnectionFactory){         RedisMessageListenerContainer container = new RedisMessageListenerContainer();         container.setConnectionFactory(redisConnectionFactory);         container.addMessageListener(listenerAdapter, new PatternTopic(TOPIC));         return container;     }          @Bean     MessageListenerAdapter adapter(RedisMessageReceiver receiver){         return new MessageListenerAdapter(receiver,"receive");     }    }</code></pre> <p>在上面的监听适配器<code>MessageListenerAdapter</code>中，我们传入了一个自定义的<code>RedisMessageReceiver</code>接收并处理消息，并指定使用它的<code>receive</code>方法来处理监听到的消息，下面我们就来看看它如何接收消息并消费。</p> <h3 id="消息消费逻辑">消息消费逻辑</h3> <p>定义一个类<code>RedisMessageReceiver</code>来接收并消费消息，需要在它的方法中实现以下功能：</p> <ul> <li>反序列化接收到的消息，转换为前面定义的<code>CacheMassage</code>类型对象</li> <li>根据消息的主机标识判断这条消息是不是本机发出的，如果是那么直接丢弃，只有接收到其他主机发出的消息才进行处理</li> <li>使用<code>cacheName</code>得到具体使用的那一个<code>DoubleCache</code>实例</li> <li>根据消息的类型判断要执行的是更新还是删除操作，调用对应的方法</li> </ul> <pre><code class="language-java">@Slf4j @Component @AllArgsConstructor public class RedisMessageReceiver {     private final RedisTemplate redisTemplate;     private final DoubleCacheManager manager;      //接收通知，进行处理     public void receive(String message) throws UnknownHostException {         CacheMassage msg = (CacheMassage) redisTemplate                 .getValueSerializer().deserialize(message.getBytes());         log.info(msg.toString());          //如果是本机发出的消息，那么不进行处理         if (msg.getMsgSource().equals(MessageSourceUtil.getMsgSource())){             log.info("收到本机发出的消息，不做处理");             return;         }          DoubleCache cache = (DoubleCache) manager.getCache(msg.getCacheName());         if (msg.getType()== CacheMsgType.UPDATE) {             cache.updateL1Cache(msg.getKey(),msg.getValue());             log.info("更新本地缓存");         }          if (msg.getType()== CacheMsgType.DELETE) {             log.info("删除本地缓存");             cache.evictL1Cache(msg.getKey());         }     } }</code></pre> <p>在上面的代码中，调用了<code>DoubleCache</code>中更新一级缓存方法<code>updateL1Cache</code>、删除一级缓存方法<code>evictL1Cache</code>，我们会后面在<code>DoubleCache</code>中进行添加。</p> <h3 id="修改doublecache">修改DoubleCache</h3> <p>在<code>DoubleCache</code>中先添加上面提到的两个方法，由<code>CacheManager</code>获取到具体缓存后调用，进行一级缓存的更新或删除操作：</p> <pre><code class="language-java">// 更新一级缓存 public void updateL1Cache(Object key,Object value){     caffeineCache.put(key,value); }  // 删除一级缓存 public void evictL1Cache(Object key){     caffeineCache.invalidate(key); }</code></pre> <p>好了，完事具备只欠东风，我们要在什么场合发送消息呢？答案是在<code>DoubleCache</code>中存入缓存的<code>put</code>方法和移除缓存的<code>evict</code>方法中。首先修改<code>put</code>方法，方法中前面的逻辑不变，在最后添加发送消息通知其他节点更新一级缓存的逻辑：</p> <pre><code class="language-java">public void put(Object key, Object value) { 	// 省略前面的不变代码...      //发送信息通知其他节点更新一级缓存	 	CacheMassage cacheMassage 			= new CacheMassage(this.cacheName, CacheMsgType.UPDATE, 			key,value, MessageSourceUtil.getMsgSource()); 	redisTemplate.convertAndSend(MessageConfig.TOPIC,cacheMassage); }</code></pre> <p>然后修改<code>evict</code>方法，同样保持前面的逻辑不变，在最后添加发送消息的代码：</p> <pre><code class="language-java">public void evict(Object key) { 	// 省略前面的不变代码...      //发送信息通知其他节点删除一级缓存        CacheMassage cacheMassage             = new CacheMassage(this.cacheName, CacheMsgType.DELETE,             key,null, MessageSourceUtil.getMsgSource());     redisTemplate.convertAndSend(MessageConfig.TOPIC,cacheMassage); }</code></pre> <p>适配分布式环境的改造工作到此结束，下面进行一下简单的测试工作。</p> <h3 id="测试">测试</h3> <p>我们可以用<code>idea</code>的<code>Allow parallel run</code>功能同时启动两个一样的springboot项目，来模拟分布式环境下的两台主机，注意在启动参数中添加<code>-Dserver.port</code>参数来启动到不同端口。</p> <p>首先测试更新操作，使用接口修改某一个主机的本地缓存，可以看到发出消息的主机在收到消息后，直接丢弃不做任何处理：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/8ad24bca363ba6418c2e6b40891c1890.jpg" alt="基于Spring接口，集成Caffeine+Redis两级缓存"></p> <p>查看另一台主机的日志，收到消息并更新了本地缓存：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/52c8bc22266baf4e23b3592154d8f6c1.jpg" alt="基于Spring接口，集成Caffeine+Redis两级缓存"></p> <p>再看一下缓存的删除情况，同样本地删除后再收到消息不做处理：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/84998edc027d9955ec033e8086480f44.jpg" alt="基于Spring接口，集成Caffeine+Redis两级缓存"></p> <p>看另一台主机收到消息后，会删除本地的一级缓存：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/5c02197eb699525fd2b3f569e981b82f.jpg" alt="基于Spring接口，集成Caffeine+Redis两级缓存"></p> <p>可以看到，分布式环境下本地缓存通过<code>Redis</code>消息的发布订阅机制保证了一级缓存的一致性。</p> <p>另外，如果更加严谨一些的话，其实还应该处理一下缓存更新失败的情况，这里留个坑以后再填。简单说一下思路，我们应该在代码中捕获缓存更新失败的异常，然后删除二级缓存、本机以及其他主机的一级缓存，再等待下一次访问时直接拉取最新的数据进行缓存。同样，要想实现缓存失效同时作用于所有单机节点的本地缓存这一功能，也可以使用上面的发布订阅来实现。</p> <h2 id="总结">总结</h2> <p>好了，这次缝缝补补的填坑之旅到这里就要结束了。可以看到使用基于<code>JSR107</code>规范的spring接口进行修改后，代码看起来舒服了很多，并且支持直接使用spring的<code>@Cache</code>相关注解。如果想在项目中使用的话，自己封装一个简单的<code>starter</code>就可以了，使用起来也非常简单。</p> <p>那么，这次的分享就到这里，我是Hydra，下篇文章再见。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-60981.htm">Android Studio计算器 app</a></p>
+                                        <p>下一个：<a href="/news/article-61576.htm">宠物用品厂家直销（宠物用品公司排行）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-56984.htm" title="成年猫咪打一次疫苗多少钱啊（成年猫咪打疫苗多少钱一针）">成年猫咪打一次疫苗多少钱啊（成年猫咪打疫苗多少钱一针）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-17-node-share-links.htm" title="2月17日免费VPN节点 | 21.9M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址">2月17日免费VPN节点 | 21.9M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-22-free-high-speed-nodes.htm" title="2月22日免费VPN节点 | 22.1M/S|2025年SSR/Clash/V2ray/Shadowrocket免费订阅链接地址">2月22日免费VPN节点 | 22.1M/S|2025年SSR/Clash/V2ray/Shadowrocket免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-53134.htm" title="vue &#8211; vue基础/vue核心内容（2）_在线工具">vue &#8211; vue基础/vue核心内容（2）_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-57547.htm" title="动物疫苗多长时间内打完有效果 动物疫苗多长时间内打完有效果呢">动物疫苗多长时间内打完有效果 动物疫苗多长时间内打完有效果呢</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-15-node-share-links.htm" title="2月15日免费VPN节点 | 20.9M/S|2025年Shadowrocket/SSR/V2ray/Clash免费订阅链接地址">2月15日免费VPN节点 | 20.9M/S|2025年Shadowrocket/SSR/V2ray/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-55872.htm" title="国内十大宠物粮食品牌排行榜图片及价格表（宠物粮食品牌起名大全）">国内十大宠物粮食品牌排行榜图片及价格表（宠物粮食品牌起名大全）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-10-free-high-speed-nodes.htm" title="2月10日免费VPN节点 | 20.8M/S|2025年SSR/Clash/Shadowrocket/V2ray免费订阅链接地址">2月10日免费VPN节点 | 20.8M/S|2025年SSR/Clash/Shadowrocket/V2ray免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-54768.htm" title="mysql错误解决方案">mysql错误解决方案</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-13-free-subscribe-node.htm" title="2月13日免费VPN节点 | 18.6M/S|2025年Clash/Shadowrocket/V2ray/SSR免费订阅链接地址">2月13日免费VPN节点 | 18.6M/S|2025年Clash/Shadowrocket/V2ray/SSR免费订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Free VPN Node节点机场订阅官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
