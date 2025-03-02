@@ -1,0 +1,208 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freevpnnode.github.io/news/article-65831.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SpringBoot程序预装载数据</title>
+        <meta name="description" content="在项目实际的开发过程中，有时候会遇到需要在应用程序启动完毕对外提供服务之前预先将部分数据装载到缓存的需求。本文就总结了常见的数据预装载方式及其实践。 适用场景  预装载应用级别数据到缓存：如字典数据、" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free VPN Node节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freevpnnode.github.io/news/article-65831.htm" />
+    <meta property="og:site_name" content="Free VPN Node节点机场订阅官网" />
+    <meta property="og:title" content="SpringBoot程序预装载数据" />
+    <meta property="og:image" content="https://freevpnnode.github.io/uploads/20240922-1/0add7f9adb820b293238573aec5aeb5a.webp" />
+        <meta property="og:release_date" content="2025-03-02T09:37:34" />
+    <meta property="og:updated_time" content="2025-03-02T09:37:34" />
+        <meta property="og:description" content="在项目实际的开发过程中，有时候会遇到需要在应用程序启动完毕对外提供服务之前预先将部分数据装载到缓存的需求。本文就总结了常见的数据预装载方式及其实践。 适用场景  预装载应用级别数据到缓存：如字典数据、" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringBoot程序预装载数据">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2KW97MK5T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C2KW97MK5T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Free VPN Node                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">SpringBoot程序预装载数据</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                  				  				  				</h1> <p>在项目实际的开发过程中，有时候会遇到需要在应用程序启动完毕对外提供服务之前预先将部分数据装载到缓存的需求。本文就总结了常见的数据预装载方式及其实践。</p> <h2 id="适用场景">适用场景</h2> <ul> <li>预装载应用级别数据到缓存：如字典数据、公共的业务数据</li> <li>系统预热</li> <li>心跳检测：如在系统启动完毕访问一个外服务接口等场景</li> </ul> <h2 id="常见方式">常见方式</h2> <ul> <li>ApplicationEvent</li> <li>CommandLineRunner</li> <li>ApplicationRunner</li> </ul> </h1> <p>应用程序事件，就是发布订阅模式。在系统启动完毕，向应用程序注册一个事件，监听者一旦监听到了事件的发布，就可以做一些业务逻辑的处理了。</p> <p>既然是发布-订阅模式，那么订阅者既可以是一个，也可以是多个。</p> <h2 id="定义event">定义event</h2> <pre><code> import org.springframework.context.ApplicationEvent; public class CacheEvent &nbsp; extends ApplicationEvent { &nbsp; &nbsp; public CacheEvent(Object source) { &nbsp; &nbsp; &nbsp; &nbsp; super(source); &nbsp; &nbsp; } }</code></pre> <h2 id="定义listener">定义listener</h2> <pre><code> import lombok.extern.slf4j.Slf4j; import org.apache.commons.lang3.StringUtils; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.context.ApplicationListener; import org.springframework.stereotype.Component; import org.springframework.util.CollectionUtils; import java.util.List; import java.util.Map; import java.util.stream.Collectors; @Slf4j @Component public class CacheEventListener implements ApplicationListener&lt;CacheEvent&gt; { &nbsp; &nbsp; @Autowired &nbsp; &nbsp; private MaskingService maskingService; &nbsp; &nbsp; @Autowired &nbsp; &nbsp; private RedisCache redisCache; &nbsp; &nbsp; @Override &nbsp; &nbsp; public void onApplicationEvent(CacheEvent cacheEvent) { &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheEventListener-start"); &nbsp; &nbsp; &nbsp; &nbsp; List&lt;SysMasking&gt; maskings = maskingService.selectAllSysMaskings(); &nbsp; &nbsp; &nbsp; &nbsp; if (!CollectionUtils.isEmpty(maskings)) { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheEventListener-data-not-empty"); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Map&lt;String, List&lt;SysMasking&gt;&gt; cacheMap = maskings.stream().collect(Collectors.groupingBy(SysMasking::getFieldKey)); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cacheMap.keySet().forEach(x -&gt; { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (StringUtils.isNotEmpty(x)) { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheEventListener-x={}", x); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; List&lt;SysMasking&gt; list = cacheMap.get(x); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; long count = redisCache.setCacheList(RedisKeyPrefix.MASKING.getPrefix() + x, list); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheEventListener-count={}", count); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheEventListener-x-is-empty"); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }); &nbsp; &nbsp; &nbsp; &nbsp; } else { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheEventListener-data-is-empty"); &nbsp; &nbsp; &nbsp; &nbsp; } &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheEventListener-end"); &nbsp; &nbsp; } }</code></pre> <h2 id="注册event">注册event</h2> <pre><code> @Slf4j @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class}) public class BAMSApplication { &nbsp; &nbsp; public static void main(String[] args) { &nbsp; &nbsp; &nbsp; &nbsp; ConfigurableApplicationContext context = SpringApplication.run(BAMSApplication.class, args); &nbsp; &nbsp; &nbsp; &nbsp; log.debug("app-started"); &nbsp; &nbsp; &nbsp; &nbsp; context.publishEvent(new CacheEvent("处理缓存事件")); &nbsp; &nbsp; } }</code></pre> </h1> <p>通过实现 CommandLineRunner 接口，可以在应用程序启动完毕，回调到指定的方法中。</p> <pre><code> package com.ramble.warmupservice.runner; import lombok.extern.slf4j.Slf4j; import org.springframework.boot.CommandLineRunner; import org.springframework.stereotype.Component; @Slf4j @Component public class CacheCommandLineRunner implements CommandLineRunner { &nbsp; &nbsp; @Override &nbsp; &nbsp; public void run(String... args) throws Exception { &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheCommandLineRunner-start"); &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheCommandLineRunner-参数={}", args); &nbsp; &nbsp; &nbsp; &nbsp; // 注入业务 service ，获取需要缓存的数据 &nbsp; &nbsp; &nbsp; &nbsp; // 注入 redisTemplate ，将需要缓存的数据存放到 redis 中 &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheCommandLineRunner-end"); &nbsp; &nbsp; } }</code></pre> </h1> <p>同CommandLineRunner 类似，区别在于，对参数做了封装。</p> <pre><code> package com.ramble.warmupservice.runner; import com.alibaba.fastjson.JSON; import lombok.extern.slf4j.Slf4j; import org.springframework.boot.ApplicationArguments; import org.springframework.boot.ApplicationRunner; import org.springframework.stereotype.Component; @Slf4j @Component public class CacheApplicationRunner implements ApplicationRunner { &nbsp; &nbsp; @Override &nbsp; &nbsp; public void run(ApplicationArguments args) throws Exception { &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheApplicationRunner-start"); &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheApplicationRunner-参数={}", JSON.toJSONString(args)); &nbsp; &nbsp; &nbsp; &nbsp; // 注入业务 service ，获取需要缓存的数据 &nbsp; &nbsp; &nbsp; &nbsp; // 注入 redisTemplate ，将需要缓存的数据存放到 redis 中 &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheApplicationRunner-end"); &nbsp; &nbsp; } }</code></pre> </h1> <p>上述代码在idea中启动，若不带参数，输出如下：</p> <pre><code> 2022-04-28 15:44:00.981 &nbsp;INFO 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.WarmupServiceApplication &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Started WarmupServiceApplication in 1.335 seconds (JVM running for 2.231) 2022-04-28 15:44:00.982 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheApplicationRunner &nbsp; &nbsp; &nbsp;: CacheApplicationRunner-start 2022-04-28 15:44:01.025 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheApplicationRunner &nbsp; &nbsp; &nbsp;: CacheApplicationRunner-参数={"nonOptionArgs":[],"optionNames":[],"sourceArgs":[]} 2022-04-28 15:44:01.025 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheApplicationRunner &nbsp; &nbsp; &nbsp;: CacheApplicationRunner-end 2022-04-28 15:44:01.025 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheCommandLineRunner &nbsp; &nbsp; &nbsp;: CacheCommandLineRunner-start 2022-04-28 15:44:01.026 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheCommandLineRunner &nbsp; &nbsp; &nbsp;: CacheCommandLineRunner-参数={} 2022-04-28 15:44:01.026 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheCommandLineRunner &nbsp; &nbsp; &nbsp;: CacheCommandLineRunner-end 2022-04-28 15:44:01.026 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.listener.CacheEventListener &nbsp; &nbsp; &nbsp; &nbsp;: CacheEventListener-start 2022-04-28 15:44:01.026 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.listener.CacheEventListener &nbsp; &nbsp; &nbsp; &nbsp;: CacheEventListener-参数=ApplicationEvent--&gt;缓存系统数据 2022-04-28 15:44:01.029 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.listener.CacheEventListener &nbsp; &nbsp; &nbsp; &nbsp;: CacheEventListener-end Disconnected from the target VM, address: '127.0.0.1:61320', transport: 'socket' Process finished with exit code 130</code></pre> <p>若使用 java  -jar  xxx.jar    --server.port=9009 启动，则输入如下：</p> <pre><code> 2022-04-28 16:02:05.327 &nbsp;INFO 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.WarmupServiceApplication &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Started WarmupServiceApplication in 1.78 seconds (JVM running for 2.116) 2022-04-28 16:02:05.329 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheApplicationRunner &nbsp; &nbsp; &nbsp;: CacheApplicationRunner-start 2022-04-28 16:02:05.393 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheApplicationRunner &nbsp; &nbsp; &nbsp;: CacheApplicationRunner-参数={"nonOptionArgs":[],"optionNames":["server.port"],"sourceArgs":["--server.port=9009"]} 2022-04-28 16:02:05.395 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheApplicationRunner &nbsp; &nbsp; &nbsp;: CacheApplicationRunner-end 2022-04-28 16:02:05.395 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheCommandLineRunner &nbsp; &nbsp; &nbsp;: CacheCommandLineRunner-start 2022-04-28 16:02:05.395 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheCommandLineRunner &nbsp; &nbsp; &nbsp;: CacheCommandLineRunner-参数=--server.port=9009 2022-04-28 16:02:05.395 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheCommandLineRunner &nbsp; &nbsp; &nbsp;: CacheCommandLineRunner-end 2022-04-28 16:02:05.395 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.listener.CacheEventListener &nbsp; &nbsp; &nbsp; &nbsp;: CacheEventListener-start 2022-04-28 16:02:05.396 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.listener.CacheEventListener &nbsp; &nbsp; &nbsp; &nbsp;: CacheEventListener- 参数=ApplicationEvent--&gt;缓存系统数据 2022-04-28 16:02:05.396 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.listener.CacheEventListener &nbsp; &nbsp; &nbsp; &nbsp;: CacheEventListener-end</code></pre> </h1> <p>从上面测试的输出，可以看到三种方式执行的顺序为：<br /> ApplicationRunner---&gt;CommandLineRunner---&gt;ApplicationEvent</p> <p>另外，若同时定义多个runner，可以通过order来指定他们的优先级。</p> </h1> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://gitee.com/naylor_personal/ramble-spring-cloud/tree/master/warmup-service"  target="_blank" rel="nofollow">https://gitee.com/naylor_personal/ramble-spring-cloud/tree/master/warmup-service</a></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-65218.htm">动物医院有什么科室啊（动物医院前景好吗）</a></p>
+                                        <p>下一个：<a href="/news/article-65832.htm">动物医院资质查询官网网址是什么（动物医院的号码是多少）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-64598.htm" title="win11系统找不到网络路径如何解决">win11系统找不到网络路径如何解决</a></li>
+                        <li class="py-2"><a href="/news/article-54222.htm" title="如果我们在CONCAT_WS()函数中同时使用NULL作为参数，参数之一和分隔符，那么MySQL将返回什么？">如果我们在CONCAT_WS()函数中同时使用NULL作为参数，参数之一和分隔符，那么MySQL将返回什么？</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-15-node-share-links.htm" title="2月15日免费VPN节点 | 20.9M/S|2025年Shadowrocket/SSR/V2ray/Clash免费订阅链接地址">2月15日免费VPN节点 | 20.9M/S|2025年Shadowrocket/SSR/V2ray/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-19-free-v2ray.htm" title="2月19日免费VPN节点 | 19.5M/S|2025年SSR/Clash/Shadowrocket/V2ray免费订阅链接地址">2月19日免费VPN节点 | 19.5M/S|2025年SSR/Clash/Shadowrocket/V2ray免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-7-free-high-speed-nodes.htm" title="2月7日免费VPN节点 | 20M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址">2月7日免费VPN节点 | 20M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-52596.htm" title="动物防疫站几点关门啊（动物防疫站工作时间）">动物防疫站几点关门啊（动物防疫站工作时间）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-9-free-node-subscribe.htm" title="2月9日免费VPN节点 | 18M/S|2025年Shadowrocket/V2ray/SSR/Clash免费订阅链接地址">2月9日免费VPN节点 | 18M/S|2025年Shadowrocket/V2ray/SSR/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-18-free-node-subscribe-links.htm" title="2月18日免费VPN节点 | 18.3M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址">2月18日免费VPN节点 | 18.3M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-53664.htm" title="三国杀武将盘点（三国杀武将大合集2021）">三国杀武将盘点（三国杀武将大合集2021）</a></li>
+                        <li class="py-2"><a href="/news/article-62184.htm" title="农大动物医院电话24小时营业吗上海 农大动物医院电话24小时营业吗上海">农大动物医院电话24小时营业吗上海 农大动物医院电话24小时营业吗上海</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Free VPN Node节点机场订阅官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
