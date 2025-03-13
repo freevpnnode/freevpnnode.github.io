@@ -1,0 +1,208 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freevpnnode.github.io/news/article-72289.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>pandas中的apply()使用</title>
+        <meta name="description" content="apply() 函数可以直接对 Series 或者 DataFrame 中元素进行逐元素遍历操作，方便且高效，apply() 使用时，通常放入一个 lambda 函数表达式、或一个函数作为操作运算。 " />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free VPN Node节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freevpnnode.github.io/news/article-72289.htm" />
+    <meta property="og:site_name" content="Free VPN Node节点机场订阅官网" />
+    <meta property="og:title" content="pandas中的apply()使用" />
+    <meta property="og:image" content="https://freevpnnode.github.io/uploads/20240922-1/356d629cd87fa9098075d1c33e32211d.webp" />
+        <meta property="og:release_date" content="2025-03-12T06:08:38" />
+    <meta property="og:updated_time" content="2025-03-12T06:08:38" />
+        <meta property="og:description" content="apply() 函数可以直接对 Series 或者 DataFrame 中元素进行逐元素遍历操作，方便且高效，apply() 使用时，通常放入一个 lambda 函数表达式、或一个函数作为操作运算。 " />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="pandas中的apply()使用">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2KW97MK5T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C2KW97MK5T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Free VPN Node                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">pandas中的apply()使用</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>apply() 函数可以直接对 Series 或者 DataFrame 中元素进行逐元素遍历操作，方便且高效，apply() 使用时，通常放入一个 lambda 函数表达式、或一个函数作为操作运算。</p> <pre><code class="prism language-python">DataFrame<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> func<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> raw<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> result_type<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwds </code></pre> <p>参数说明：</p> <ul> <li>func 代表的是传入的函数或 lambda 表达式；</li> <li>axis 参数可提供的有两个，该参数默认为0/列<br /> 0 或者 index ，表示函数处理的是每一列；<br /> 1 或 columns ，表示处理的是每一行;</li> <li>raw ；bool 类型，默认为 False;<br /> False ，表示把每一行或列作为 Series 传入函数中；<br /> True，表示接受的是 ndarray 数据类型；</li> </ul> <p>apply() 最后的是经过函数处理，数据以 Series 或 DataFrame 格式返回。<br /> 先看Series的apply()使用：</p> <pre><code class="prism language-python">s <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span> a <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span> b <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> </code></pre> <p>输出结果：<br /> 1<br /> 2<br /> 3<br /> &lt;class ‘int’&gt;<br /> &lt;class ‘int’&gt;<br /> &lt;class ‘int’&gt;<br /> 可以看出，在apply()中，会自动取出每个元素，相当于循环遍历了一遍调用的Series<br /> a,b的输出结果为:<br /> 0, None<br /> 1, None<br /> 2, None<br /> 因为中间的lambda函数只是打印，所以返回的是None。<br /> 在DataFrame中apply()的使用：<br /> DataFrame中传入的参数就是Series结构了，例如：</p> <pre><code class="prism language-python">matrix <span class="token operator">=</span> <span class="token punctuation">[</span>     <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>     <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span>     <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span> <span class="token punctuation">]</span> df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token string">'xyz'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> </code></pre> <p>df的结构长这样：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230118/8c90f4955cbaed26ff0af016a6716ff9.jpg" alt="pandas中的apply()使用"></p> <pre><code class="prism language-python">a<span class="token operator">=</span>df<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> </code></pre> <p>输出如下：<br /> &lt;class ‘pandas.core.series.Series’&gt;<br /> &lt;class ‘pandas.core.series.Series’&gt;<br /> &lt;class ‘pandas.core.series.Series’&gt;<br /> 可见传入lambda函数的参数类型是Series<br /> 现在求DataFrame中每个数的平方：</p> <pre><code class="prism language-python">a<span class="token operator">=</span>df<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token operator">*</span>x<span class="token punctuation">)</span> </code></pre> <p>输出：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230118/7ceda1b67935ad7513ffd010577296a2.jpg" alt="pandas中的apply()使用">用apply()求指定行的平方：</p> <pre><code class="prism language-python">a<span class="token operator">=</span>df<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token operator">*</span>x <span class="token keyword">if</span> x<span class="token punctuation">.</span>name<span class="token operator">==</span><span class="token string">'a'</span> <span class="token keyword">else</span> x<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> </code></pre> <p>输出如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230118/e969cadf0c30ebf189bb4606d3e8595f.jpg" alt="pandas中的apply()使用"><br /> 发现一种奇怪的现象：</p> <pre><code class="prism language-python">a<span class="token operator">=</span>df<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">if</span> x<span class="token punctuation">.</span>name<span class="token operator">==</span><span class="token string">'a'</span> <span class="token keyword">else</span> <span class="token boolean">None</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> </code></pre> <p>输出如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230118/1c93343e00e40f73b94f8b8594f3e726.jpg" alt="pandas中的apply()使用"><br /> 其实主要是看lambda函数返回的是什么，在DataFrame中，传入的是Series，返回的自然是Series的运算结果。例如上面求对第一行的Series求平方，结果还是一个Series（如下例），而对第一行求平均数返回的是一个数，自然结果的第一行就成了一个数。</p> <pre><code class="prism language-python">s <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span> ss <span class="token operator">=</span> s<span class="token operator">*</span>s <span class="token keyword">print</span><span class="token punctuation">(</span>ss<span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>ss<span class="token punctuation">)</span><span class="token punctuation">)</span> </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230118/a30c4c6e42afb5de785b68f722f1f962.jpg" alt="pandas中的apply()使用"><br /> 总的来说，apply()函数就是自动对Series或DataFrame中的每个元素执行指定的函数操作。特别注意DataFrame中的参数是Series，那么函数中自然就是对Series的操作了。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-71641.htm">由浅入深快速掌握Java 数组的使用_java</a></p>
+                                        <p>下一个：<a href="/news/article-72291.htm">动物医院贵吗多少钱一次 动物医院贵吗多少钱一次啊</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-65832.htm" title="动物医院资质查询官网网址是什么（动物医院的号码是多少）">动物医院资质查询官网网址是什么（动物医院的号码是多少）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-24-free-v2ray.htm" title="2月24日免费VPN节点 | 23M/S|2025年V2ray/SSR/Clash/Shadowrocket免费订阅链接地址">2月24日免费VPN节点 | 23M/S|2025年V2ray/SSR/Clash/Shadowrocket免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-61577.htm" title="宠物粮公司排名榜最新名单（国内宠物粮食十大厂家）">宠物粮公司排名榜最新名单（国内宠物粮食十大厂家）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-13-free-subscribe-node.htm" title="2月13日免费VPN节点 | 18.6M/S|2025年Clash/Shadowrocket/V2ray/SSR免费订阅链接地址">2月13日免费VPN节点 | 18.6M/S|2025年Clash/Shadowrocket/V2ray/SSR免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-17-node-share-links.htm" title="2月17日免费VPN节点 | 21.9M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址">2月17日免费VPN节点 | 21.9M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-54223.htm" title="进程通信&#8212;-共享内存以及mmap函数实现共享内存">进程通信&#8212;-共享内存以及mmap函数实现共享内存</a></li>
+                        <li class="py-2"><a href="/news/article-68357.htm" title="淮南领养狗狗（淮南市哪里可以领养小动物）">淮南领养狗狗（淮南市哪里可以领养小动物）</a></li>
+                        <li class="py-2"><a href="/news/article-59835.htm" title="SpringBoot整合MybatisPlus基本的增删改查，保姆级教程_在线工具">SpringBoot整合MybatisPlus基本的增删改查，保姆级教程_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-53665.htm" title="动物疫苗注射注意事项有哪些内容（动物疫苗注射工作注意事项）">动物疫苗注射注意事项有哪些内容（动物疫苗注射工作注意事项）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-free-v2ray.htm" title="3月11日免费VPN节点 | 18M/S|2025年Clash/V2ray/SSR/Shadowrocket免费订阅链接地址">3月11日免费VPN节点 | 18M/S|2025年Clash/V2ray/SSR/Shadowrocket免费订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">38</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Free VPN Node节点机场订阅官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
