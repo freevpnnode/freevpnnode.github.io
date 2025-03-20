@@ -1,0 +1,208 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freevpnnode.github.io/news/article-76989.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SpringCloud系列之分布式请求链路跟踪(Sleuth)</title>
+        <meta name="description" content="①、为什么使用Sleuth  在微服务框架中，一个由客户端发起的请求在后端系统中会经过多个不同的的服务节点调用来协同产生最后的请求结果，每一个前段请求都会形成一条复杂的分布式服务调用链路，链路中的任何" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free VPN Node节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freevpnnode.github.io/news/article-76989.htm" />
+    <meta property="og:site_name" content="Free VPN Node节点机场订阅官网" />
+    <meta property="og:title" content="SpringCloud系列之分布式请求链路跟踪(Sleuth)" />
+    <meta property="og:image" content="https://freevpnnode.github.io/uploads/20240922-1/a20f654a363bade37fe772c4f150cdf4.webp" />
+        <meta property="og:release_date" content="2025-03-19T09:10:09" />
+    <meta property="og:updated_time" content="2025-03-19T09:10:09" />
+        <meta property="og:description" content="①、为什么使用Sleuth  在微服务框架中，一个由客户端发起的请求在后端系统中会经过多个不同的的服务节点调用来协同产生最后的请求结果，每一个前段请求都会形成一条复杂的分布式服务调用链路，链路中的任何" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringCloud系列之分布式请求链路跟踪(Sleuth)">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2KW97MK5T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C2KW97MK5T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Free VPN Node                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">SpringCloud系列之分布式请求链路跟踪(Sleuth)</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-dracula"> </h1> <h2><a id="Sleuth_2" rel="nofollow"></a>①、为什么使用Sleuth</h2> <blockquote> <p>在微服务框架中，一个由客户端发起的请求在后端系统中会经过多个不同的的服务节点调用来协同产生最后的请求结果，每一个前段请求都会形成一条复杂的分布式服务调用链路，链路中的任何一环出现高延时或错误都会引起整个请求最后的失败。</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/c02d9f954df4c34aab9a794b50841bc7.jpg" alt="SpringCloud系列之分布式请求链路跟踪(Sleuth)"></p> <blockquote> <p>对于上面这张图，较为简单，监控与否无关紧要，但是对于大型分布式系统而言呢？成百上千个服务使我们不得不对服务链路进行追踪</p> </blockquote> <h2><a id="Sleuth_10" rel="nofollow"></a>②、什么是Sleuth</h2> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/spring-cloud/spring-cloud-sleuth"  rel="nofollow">源码仓库</a>，<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cloud.spring.io/spring-cloud-sleuth/reference/html/"  rel="nofollow">官方文档</a></p> <blockquote> <p><code>Spring Cloud Sleuth</code>提供了一套完整的服务跟踪的解决方案，在分布式系统中提供追踪解决方案并兼容支持了<code>zipkin</code>，前者负责监控，后者负责显示，也就是服务调用服务可以以图形化的界面展示出来。</p> </blockquote> </h1> <h2><a id="zipkin_18" rel="nofollow"></a>①、下载zipkin</h2> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://dl.bintray.com/openzipkin/maven/io/zipkin/java/zipkin-server/"  rel="nofollow">下载地址</a></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/d030b579a2aede20bb835ab0834002ef.jpg" alt="SpringCloud系列之分布式请求链路跟踪(Sleuth)"></p> <blockquote> <p>下载到本地后执行<code>cmd</code>命令启动</p> </blockquote> <pre><code class="prism language-bash">java -jar zipkin-server-2.12.9-exec.jar</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/07f5d02584e502a3e89a0b5be4a0f4f9.jpg" alt="SpringCloud系列之分布式请求链路跟踪(Sleuth)"></p> <blockquote> <p>访问<code>http://localhost:9411/zipkin/</code></p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/459d90fd278efc8038c6604d31bc4fef.jpg" alt="SpringCloud系列之分布式请求链路跟踪(Sleuth)"></p> <h2><a id="_36" rel="nofollow"></a>②、术语</h2> <blockquote> <p>一条链路通过<code>Trace ld</code>唯一标识，<code>Span</code>标识发起的请求信息，各<code>Span</code>通过<code>parent id</code>关联起来</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/e5d5120762fd5cd6a410b5e167d3a8a1.jpg" alt="SpringCloud系列之分布式请求链路跟踪(Sleuth)"></p> <blockquote> <p>翻译为服务链路关系：</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/59b59ccd7f4328a940a95f65fe67c4df.jpg" alt="SpringCloud系列之分布式请求链路跟踪(Sleuth)"></p> <ul> <li><strong>Trace</strong>：类似于树结构的<code>Span</code>集合，表示一条调用链路，存在唯一标识</li> <li><strong>Span</strong>：表示调用链路来源，通俗的理解<code>Span</code>就是一次请求信息</li> </ul> <h2><a id="POM_49" rel="nofollow"></a>③、添加POM</h2> <blockquote> <p>向服务添加<code>zipkin</code>依赖</p> </blockquote> <pre><code class="prism language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-cloud-starter-zipkin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span></code></pre> <h2><a id="YML_60" rel="nofollow"></a>④、YML添加配置</h2> <blockquote> <p>服务提供者和消费者都要加上，注意缩进</p> </blockquote> <pre><code class="prism language-yml"><span class="token key atrule">sleuth</span><span class="token punctuation">:</span><span class="token key atrule">sampler</span><span class="token punctuation">:</span><span class="token comment">#采样取值介于 0到1之间，1则表示全部收集</span><span class="token key atrule">probability</span><span class="token punctuation">:</span><span class="token number">1</span></code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/b2d930b5f2c05354b25d6e7be7a44136.jpg" alt="SpringCloud系列之分布式请求链路跟踪(Sleuth)"></p> <h2><a id="_73" rel="nofollow"></a>⑤、测试</h2> <blockquote> <p>启动<code>Eureka</code>(<code>7001</code>)和服务提供者(<code>8001</code>)消费者(<code>8002</code>)</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/3f9f397059e71345bd5b7f20d4333b74.jpg" alt="SpringCloud系列之分布式请求链路跟踪(Sleuth)"></p> <blockquote> <p>调用服务，多点几次</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/e622ef9ae7c3aa6ca82f20ea31b49e4c.jpg" alt="SpringCloud系列之分布式请求链路跟踪(Sleuth)"></p> <blockquote> <p>访问<code>http://localhost:9411/zipkin/</code></p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/f0fb9ce883220c9a3c6093288107b32e.jpg" alt="SpringCloud系列之分布式请求链路跟踪(Sleuth)"></p> <blockquote> <p>点击查找</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/e7812c1bb781dc81fe4bd93b80d8e3e1.jpg" alt="SpringCloud系列之分布式请求链路跟踪(Sleuth)"></p> <blockquote> <p>也可以根据服务名查找</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/d70d98b34dcfb2a2869a04076efbef28.jpg" alt="SpringCloud系列之分布式请求链路跟踪(Sleuth)"></p> <blockquote> <p>点击某一条记录能查看到调用细节</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/55a538521f2c5e0f551a3f8632ef5e2a.jpg" alt="SpringCloud系列之分布式请求链路跟踪(Sleuth)"></p> <blockquote> <p>也可以查看依赖</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/a58c908cd51e253598f55119480cbea3.jpg" alt="SpringCloud系列之分布式请求链路跟踪(Sleuth)"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-76330.htm">动物疫苗经营许可证办理条件有哪些呢英语（办理动物疫苗销售需要哪些手续）</a></p>
+                                        <p>下一个：<a href="/news/article-76990.htm">动物疫苗存放环境要求标准（动物疫苗存放环境要求标准是）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-69668.htm" title="为什么常熟羊毛羊绒大衣这两年发展得这么好呢(常熟的羊绒大衣批发在哪里)">为什么常熟羊毛羊绒大衣这两年发展得这么好呢(常熟的羊绒大衣批发在哪里)</a></li>
+                        <li class="py-2"><a href="/news/article-51566.htm" title="哈尔滨农大动物医院电话号码 哈尔滨农大动物医院电话号码是多少">哈尔滨农大动物医院电话号码 哈尔滨农大动物医院电话号码是多少</a></li>
+                        <li class="py-2"><a href="/news/article-58120.htm" title="猫疫苗不打有事吗（猫疫苗不打完可以吗）">猫疫苗不打有事吗（猫疫苗不打完可以吗）</a></li>
+                        <li class="py-2"><a href="/news/article-63367.htm" title="动物疫苗公司销量排名 动物疫苗公司销量排名前十">动物疫苗公司销量排名 动物疫苗公司销量排名前十</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-8-free-node-subscribe-links.htm" title="2月8日免费VPN节点 | 19.9M/S|2025年V2ray/SSR/Shadowrocket/Clash免费订阅链接地址">2月8日免费VPN节点 | 19.9M/S|2025年V2ray/SSR/Shadowrocket/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-57547.htm" title="动物疫苗多长时间内打完有效果 动物疫苗多长时间内打完有效果呢">动物疫苗多长时间内打完有效果 动物疫苗多长时间内打完有效果呢</a></li>
+                        <li class="py-2"><a href="/news/article-55871.htm" title="国货猫粮排行榜前十名（2021年国产猫粮推荐与测评）">国货猫粮排行榜前十名（2021年国产猫粮推荐与测评）</a></li>
+                        <li class="py-2"><a href="/news/article-65831.htm" title="SpringBoot程序预装载数据">SpringBoot程序预装载数据</a></li>
+                        <li class="py-2"><a href="/news/article-54769.htm" title="济南领养狗狗贴吧 济南领养狗狗贴吧论坛">济南领养狗狗贴吧 济南领养狗狗贴吧论坛</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-18-free-node-subscribe-links.htm" title="2月18日免费VPN节点 | 18.3M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址">2月18日免费VPN节点 | 18.3M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">59</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Free VPN Node节点机场订阅官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
