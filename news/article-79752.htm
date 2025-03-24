@@ -1,0 +1,208 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freevpnnode.github.io/news/article-79752.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Java 使用 Maven BOM 统一管理版本号_在线工具</title>
+        <meta name="description" content="一个中大型的 Java 基础框架项目往往包含许多 JAR 包，如果将这些 JAR 包单独发布给业务开发使用，这些不同版本 JAR 包间的兼容性维护将变得十分麻烦。为了解决这个问题，可以让一个特殊的模块" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free VPN Node节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freevpnnode.github.io/news/article-79752.htm" />
+    <meta property="og:site_name" content="Free VPN Node节点机场订阅官网" />
+    <meta property="og:title" content="Java 使用 Maven BOM 统一管理版本号_在线工具" />
+    <meta property="og:image" content="https://freevpnnode.github.io/uploads/20240922-1/c533170c915478b024c5debc18fcae70.webp" />
+        <meta property="og:release_date" content="2025-03-23T08:23:42" />
+    <meta property="og:updated_time" content="2025-03-23T08:23:42" />
+        <meta property="og:description" content="一个中大型的 Java 基础框架项目往往包含许多 JAR 包，如果将这些 JAR 包单独发布给业务开发使用，这些不同版本 JAR 包间的兼容性维护将变得十分麻烦。为了解决这个问题，可以让一个特殊的模块" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java 使用 Maven BOM 统一管理版本号_在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2KW97MK5T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C2KW97MK5T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Free VPN Node                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">Java 使用 Maven BOM 统一管理版本号_在线工具</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                  				  				  				<p>一个中大型的 Java 基础框架项目往往包含许多 JAR 包，如果将这些 JAR 包单独发布给业务开发使用，这些不同版本 JAR 包间的兼容性维护将变得十分麻烦。为了解决这个问题，可以让一个特殊的模块引用这些 JAR 包，将一组 JAR 包兼容的版本号定义在这个模块中，对外发布时只发布这个特殊模块。这个特殊模块就是 BOM(Bill Of Materials)。</p> <p>著名的 Spring Boot 就使用了这种方式来管理版本号，这个模块就是 <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/spring-boot-dependencies"  target="_blank"  rel="nofollow">spring-boot-dependencies</a>，用户在使用 Spring Boot Starter 相关依赖时引入特定版本的 spring-boot-dependencies，然后在引入其它依赖时只需要声明 group 和 name 即可，不需要再指定版本号了。当然，在 Gradle 中使用 Spring Boot 插件，或者在 Maven 中使用 spring-boot-starter-parent 作为父模块也能够达到类似的效果。</p> <p>本文将介绍如何通过 Gradle 来制作一个 BOM 以及如何在 Gradle 中使用 BOM。作为 Maven 中的一个概念，也可以使用 Maven 也可以制作和使用 BOM，但本文不涉及。</p> <h2 id="1-bom-介绍">1. BOM 介绍</h2> <p>BOM (Bill Of Material) 是 Maven 仓库中的一个概念，它本质也是一个可被引用的包，但不包含代码，只是声明了一系列其它包。例如：Maven 中央仓库中的 spring-boot-dependencies](<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-dependencies/2.4.4/"  target="_blank"  rel="nofollow">https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-dependencies/2.4.4/</a>) 包。它只有一个 <code>.pom</code> 文件。</p> <p>下面是 Maven 官网上的一个简单的 BOM 的 <code>.pom</code> 文件：</p> <pre><code class="language-xml">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;   &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;   &lt;groupId&gt;com.test&lt;/groupId&gt;   &lt;artifactId&gt;bom&lt;/artifactId&gt;   &lt;version&gt;1.0.0&lt;/version&gt;   &lt;packaging&gt;pom&lt;/packaging&gt;   &lt;properties&gt;     &lt;project1Version&gt;1.0.0&lt;/project1Version&gt;     &lt;project2Version&gt;1.0.0&lt;/project2Version&gt;   &lt;/properties&gt;     &lt;dependencyManagement&gt;     &lt;dependencies&gt;       &lt;dependency&gt;         &lt;groupId&gt;com.test&lt;/groupId&gt;         &lt;artifactId&gt;project1&lt;/artifactId&gt;         &lt;version&gt;${project1Version}&lt;/version&gt;       &lt;/dependency&gt;       &lt;dependency&gt;         &lt;groupId&gt;com.test&lt;/groupId&gt;         &lt;artifactId&gt;project2&lt;/artifactId&gt;         &lt;version&gt;${project2Version}&lt;/version&gt;       &lt;/dependency&gt;     &lt;/dependencies&gt;   &lt;/dependencyManagement&gt;     &lt;modules&gt;     &lt;module&gt;parent&lt;/module&gt;   &lt;/modules&gt; &lt;/project&gt; </code></pre> <p>这个文件声明了两个包（project1 和 project2）及其版本号，和一般 .pom 文件中的声明不同的是，<dependencies> 节点外面还包含了一层 <dependencymanagement> 节点。以上就是 BOM 包中最核心的文件的基本结构了；基于 Gradle 发布 BOM 包的本质就是生成这样的一个文件。</dependencymanagement></dependencies></p> <h2 id="2-使用-gradle-制作一个-bom">2. 使用 Gradle 制作一个 BOM</h2> <p>这里我们假定要创建一个 BOM，用来统一管理三方 Java 包，其它业务模块通过引用这个 BOM 来间接引用需要使用的第三方 Java 包。工程完整代码：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Robothy/gradle-bom-example"  target="_blank"  rel="nofollow">https://github.com/Robothy/gradle-bom-example</a></p> <h3 id="21-创建-bom-工程">2.1 创建 BOM 工程</h3> <p>Gradle 中的 BOM 工程需要使用 <code>java-platform</code> 插件，这样的工程是一个不包含源代码，只包含包声明的特殊的组件，也被称为平台（platform）。</p> <p>build.gradle 部分代码</p> <pre><code class="language-groovy"> plugins {     id 'java-platform' }  dependencies {     constraints {         // 声明一些三方包及其版本号         api "org.apache.kafka:kafka-clients:2.6.0"         api "redis.clients:jedis:3.5.2"     } } </code></pre> <p>上面代码中，三方包的声明没有放在 dependencies 中，而是放在了 constraints 里面。这表示如果使用了其中的包，优先使用 constraints 中声明的版本。</p> <p>BOM 项目中声明包的方式有两种：</p> <ul> <li> <p><code>api</code> 表示包在编译期可见。</p> </li> <li> <p><code>runtime</code> 表示包在运行期间可见。</p> </li> </ul> <h3 id="22-bom-的发布">2.2 BOM 的发布</h3> <p>BOM 的发布需要使用 <code>maven-publish</code> 插件，其发布配置如下：</p> <pre><code class="language-groovy">publishing {     publications {         thirdPartPlatform(MavenPublication){             from components.javaPlatform             artifactId = "third-part-dependencies"         }     }      repositories {         mavenLocal()     } } </code></pre> <p>BOM 的命名一般以 <code>-dependencies</code> 结尾，这里我们取名为 <code>third-part-dependnecies</code>。</p> <p>执行 <code>./gradlew.bat publish</code> 就可以将 BOM 发布到本地的 Maven 仓库了。发布的 artifacts 包含两个主要文件（.pom 和 .module）和若干校验文件。其中 .pom 的文件内容为 Maven 官方定义的 BOM 的标准格式，而 <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-module-metadata-latest-specification.md"  target="_blank"  rel="nofollow">.module 文件</a>内容是 Gradle 描述元数据的一种格式。</p> <h3 id="23-bom-的使用">2.3 BOM 的使用</h3> <p>普通的 Java 应用或者 Java 库使用 BOM 的时候需要先添加 BOM 依赖，然后使用其它的库。例如：</p> <pre><code class="language-groovy">// 引入 BOM implementation platform("org.example:third-part-dependencies:1.0")  // 引入包，这时不需要再指定版本号 implementation "org.apache.kafka:kafka-clients" </code></pre> <p>当然，BOM 工程或者说 platform 工程也可以使用 BOM。</p> <p>使用的时候需要在 dependencies 下面引入 BOM，然后在 constraints 下面声明要使用的库，声明的时候无须指定版本。另外，需要在 configurations 中调用 <code>javaPlatform.allowDependencies()</code>，否则会报错。</p> <pre><code class="language-groovy">configurations{     javaPlatform.allowDependencies() }  dependencies {     api platform("org.springframework.boot:spring-boot-dependencies:2.4.4")     constraints {         api "org.apache.kafka:kafka-clients:2.6.0"         api "redis.clients:jedis:3.5.2"         api "org.springframework.batch:spring-batch-core"     } } </code></pre> <h2 id="3-参考">3 参考</h2> <p>[1] <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html"  target="_blank"  rel="nofollow">Introduction to the Dependency Mechanism<br /></a></p> <p>[2] <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://docs.gradle.org/current/userguide/java_platform_plugin.html"  target="_blank"  rel="nofollow">The Java Platform Plugin</a></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-79055.htm">动物疫苗批号查询入口 动物疫苗批号查询入口官网</a></p>
+                                        <p>下一个：<a href="/news/article-79754.htm">动物医院有什么科室（动物医院有哪些）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-node-share.htm" title="3月4日免费VPN节点 | 21.1M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址">3月4日免费VPN节点 | 21.1M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-60982.htm" title="基于Spring接口，集成Caffeine+Redis两级缓存">基于Spring接口，集成Caffeine+Redis两级缓存</a></li>
+                        <li class="py-2"><a href="/news/article-72962.htm" title="进口猫粮推荐表（推荐的进口猫粮）">进口猫粮推荐表（推荐的进口猫粮）</a></li>
+                        <li class="py-2"><a href="/news/article-79054.htm" title="加盟狗粮加工厂多少钱合适（狗粮加工厂加盟销售）">加盟狗粮加工厂多少钱合适（狗粮加工厂加盟销售）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-13-node-share.htm" title="3月13日免费VPN节点 | 18.5M/S|2025年V2ray/Shadowrocket/Clash/SSR免费订阅链接地址">3月13日免费VPN节点 | 18.5M/S|2025年V2ray/Shadowrocket/Clash/SSR免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-57548.htm" title="动物疫苗注射注意事项及禁忌症有哪些呢（动物疫苗知识）">动物疫苗注射注意事项及禁忌症有哪些呢（动物疫苗知识）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-10-free-v2ray.htm" title="3月10日免费VPN节点 | 22.6M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址">3月10日免费VPN节点 | 22.6M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-65218.htm" title="动物医院有什么科室啊（动物医院前景好吗）">动物医院有什么科室啊（动物医院前景好吗）</a></li>
+                        <li class="py-2"><a href="/news/article-68357.htm" title="淮南领养狗狗（淮南市哪里可以领养小动物）">淮南领养狗狗（淮南市哪里可以领养小动物）</a></li>
+                        <li class="py-2"><a href="/news/article-54222.htm" title="如果我们在CONCAT_WS()函数中同时使用NULL作为参数，参数之一和分隔符，那么MySQL将返回什么？">如果我们在CONCAT_WS()函数中同时使用NULL作为参数，参数之一和分隔符，那么MySQL将返回什么？</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">71</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Free VPN Node节点机场订阅官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
