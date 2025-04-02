@@ -1,0 +1,208 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freevpnnode.github.io/news/article-86812.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Metalama简介4.使用Fabric操作项目或命名空间</title>
+        <meta name="description" content="使用基于Roslyn的编译时AOP框架来解决.NET项目的代码复用问题Metalama简介1. 不止是一个.NET跨平台的编译时AOP框架Metalama简介2.利用Aspect在编译时进行消除重复代" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free VPN Node节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freevpnnode.github.io/news/article-86812.htm" />
+    <meta property="og:site_name" content="Free VPN Node节点机场订阅官网" />
+    <meta property="og:title" content="Metalama简介4.使用Fabric操作项目或命名空间" />
+    <meta property="og:image" content="https://freevpnnode.github.io/uploads/20240922-1/ecccfa3dd5d74e627effdc07ff2899bf.webp" />
+        <meta property="og:release_date" content="2025-04-02T07:44:37" />
+    <meta property="og:updated_time" content="2025-04-02T07:44:37" />
+        <meta property="og:description" content="使用基于Roslyn的编译时AOP框架来解决.NET项目的代码复用问题Metalama简介1. 不止是一个.NET跨平台的编译时AOP框架Metalama简介2.利用Aspect在编译时进行消除重复代" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Metalama简介4.使用Fabric操作项目或命名空间">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2KW97MK5T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C2KW97MK5T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Free VPN Node                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">Metalama简介4.使用Fabric操作项目或命名空间</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                  				  				  				<p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/chsword/p/dotnet_compile_aop_base_roslyn.html"  target="_blank" rel="nofollow">使用基于Roslyn的编译时AOP框架来解决.NET项目的代码复用问题</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/chsword/p/metalama_1.html"  target="_blank" rel="nofollow">Metalama简介1. 不止是一个.NET跨平台的编译时AOP框架</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/chsword/p/metalama_2.html"  target="_blank" rel="nofollow">Metalama简介2.利用Aspect在编译时进行消除重复代码</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/chsword/p/metalama_3.html"  target="_blank" rel="nofollow">Metalama简介3.自定义.NET项目中的代码分析</a></p> </h1> <p><code>Fabric</code>通过修改项目、命名空间、类型来达到一些效果，这引起修改包括：添加<code>Aspect</code>或添加代码分析</p> </h1> <p>前文中我们写过一个简单的<code>Aspect</code>:</p> <pre><code class="language-C#">public class LogAttribute : OverrideMethodAspect {     public override dynamic? OverrideMethod()     {         Console.WriteLine(meta.Target.Method.ToDisplayString() + " 开始运行.");         var result = meta.Proceed();         Console.WriteLine(meta.Target.Method.ToDisplayString() + " 结束运行.");         return result;     } }</code></pre> <p>当我们使用它时，我们要在对应的方法上添加这个<code>Attribute</code>:</p> <pre><code class="language-C#">[Log] private static int Add(int a, int b) //... ...</code></pre> <p>那么当我们有一个<code>Aspect</code>要在项目中大量使用时，在每个方法上添加这个<code>Aspect</code>当然是一种方法，但是这种方法有2个缺点：</p> <ol> <li>包含大量的重复代码<code>[Log]</code></li> <li>对于原代码的入侵性太强</li> </ol> <p>此时我们就可以使用<code>Fabric</code>为所有符合要求的方法添加指定的<code>Aspect</code>:</p> <pre><code class="language-C#">internal class Fabric : ProjectFabric {     // 这个是重写项目的Fabric中修改项目的方法     public override void AmendProject(IProjectAmender amender)     {         // 添加 LogAttribute 到符合规则的方法上         // 为名为 Add 且 private 的方法添加 LogAttribute         amender.WithTargetMembers(c =&gt;                 c.Types.SelectMany(t =&gt; t.Methods)                        .Where(t =&gt;                               t.Name == "Add" &amp;&amp;                               t.Accessibility == Metalama.Framework.Code.Accessibility.Private)             ).AddAspect(t =&gt; new LogAttribute());     } }</code></pre> <p>这样就可以在不入侵现有代码的情况下为指定的方法添加<code>Aspect</code>。</p> </h1> <p>上文中我们提到，我们可以通过<code>Aspect</code>为代码添加代码分析，当我们要将一个包含（且仅包含）代码分析的<code>Aspect</code>应用于一批代码时，当然我们可以按本文<code>示例1</code>中的方法，直接使用<code>Fabric</code>将包含代码分析的<code>Aspect</code>应用于指定代码。</p> <p>但还有另外一种方法，我们可以直接在<code>Fabric</code>中定义应用于指定代码的代码分析。</p> <p>下面示例，我们验证所有类中的私有字段必须符合<code>_camelCase</code>,并且使用一个<code>NamespaceFabric</code>来实现:</p> <pre><code class="language-C#">namespace FabricCamelCaseDemo; class Fabric : NamespaceFabric {     private static readonly DiagnosticDefinition&lt;string&gt; _warning = new(  "DEMO04",  Severity.Warning,  "'{0}'必须使用驼峰命名法并以'_'开头");     // 这个是命名空间的Fabric中修改命名空间规则 的方法     public override void AmendNamespace(INamespaceAmender amender)     { 	    // 取所有非static 的private的字段，并添加代码分析         amender.WithTargetMembers(c =&gt;                                     c.AllTypes.SelectMany(t=&gt;t.Fields)                                     .Where(t =&gt; t.Accessibility == Accessibility.Private &amp;&amp; !t.IsStatic                                     )                                  )             //preview 0.5.8之前为 RegisterFinalValidator             .Validate(this.FinalValidator);     }      private void FinalValidator(in DeclarationValidationContext context)     {         var fullname = context.Declaration.ToDisplayString();         var fieldName = fullname.Split('.').LastOrDefault();         if (fieldName!=null &amp;&amp; (!fieldName.StartsWith("_") || !char.IsLower(fieldName[1])))         {             context.Diagnostics.Report(_warning.WithArguments(fieldName));         }     } }</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/b47b918dc071361c6e285c9ace241445.jpg" alt="Metalama简介4.使用Fabric操作项目或命名空间"></p> <p>当然因为当前使用的是<code>NamespaceFabric</code>所以该规则只应用于当前命名空间如，我们如果在另外一个命名空间中定义一个违反规则的字段的话，并不会有警告。</p> <pre><code class="language-C#">namespace FabricCamelCase;  internal class OtherNamespace {     int count = 0;     int _total = 0;     public int Add()     {         count++;         _total++;         return count + _total;     } }</code></pre> </h1> <p>开始前伪造一个需求，假设我有一个类<code>AddUtils</code>专门处理加法操作，它里面应该有从2个到15个参数的Add方法15个（当然我知道，可以使用<code>params</code>等方法实现，所以这里是个伪需求）。<br /> 最终效果为</p> <pre><code class="language-C#">public class AddUtils {     public int Add2(int x1, int x2)     {         var result = 0;         result += x1;         result += x2;         return 2;     }     public int Add3(int x1, int x2, int x3)     {         var result = 0;         result += x1;         result += x2;         result += x3;         return 3;     } 	// 以此类推... 下面省去若干方法 }</code></pre> <p>那么我们可以用<code>Metalama</code>如此实现</p> <pre><code class="language-C#">using System.Reflection.Emit; using Metalama.Framework.Aspects; using Metalama.Framework.Fabrics;  public class AddUtils {     private class Fabric : TypeFabric     {         // 实现的方法体         [Template]         public int MethodTemplate()         {             var num = (int) meta.Tags["nums"]!;             var result = 0;             foreach (var targetParameter in meta.Target.Parameters)             {                 result += targetParameter.Value;             }              return num;         }          public override void AmendType(ITypeAmender amender)         {             for (var i = 2; i &lt; 15; i++)             {                 // 生成一个方法                 var methodBuilder = amender.Advices.IntroduceMethod(                     amender.Type,                     nameof(this.MethodTemplate),                     tags: new TagDictionary { ["nums"] = i });                 // 方法名                 methodBuilder.Name = "Add" + i;                 // 添加参数                 for (int parameterIndex = 1; parameterIndex &lt;= i; parameterIndex++)                 {                     methodBuilder.AddParameter($"x{parameterIndex}", typeof(int));                 }             }         }     } }</code></pre> </h1> <p>本章源代码：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/chsword/metalama-demo"  target="_blank" rel="nofollow">https://github.com/chsword/metalama-demo</a><br /> Metalama官方文档:<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://doc.metalama.net/"  target="_blank" rel="nofollow">https://doc.metalama.net/</a><br /> Metalama Nuget包:<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.nuget.org/packages/Metalama.Framework/0.5.11-preview"  target="_blank" rel="nofollow">https://www.nuget.org/packages/Metalama.Framework/0.5.11-preview</a></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-86086.htm">哈尔滨王允海动物医院（哈尔滨王福军宠物医院）</a></p>
+                                        <p>下一个：<a href="/news/article-86813.htm">如何解决sass-loader和node-sass版本冲突的问题_vue.js_</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-69668.htm" title="为什么常熟羊毛羊绒大衣这两年发展得这么好呢(常熟的羊绒大衣批发在哪里)">为什么常熟羊毛羊绒大衣这两年发展得这么好呢(常熟的羊绒大衣批发在哪里)</a></li>
+                        <li class="py-2"><a href="/news/article-69012.htm" title="宠物粮食的品牌有哪些 宠物粮食的品牌有哪些牌子">宠物粮食的品牌有哪些 宠物粮食的品牌有哪些牌子</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-13-node-share.htm" title="3月13日免费VPN节点 | 18.5M/S|2025年V2ray/Shadowrocket/Clash/SSR免费订阅链接地址">3月13日免费VPN节点 | 18.5M/S|2025年V2ray/Shadowrocket/Clash/SSR免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-14-free-high-speed-nodes.htm" title="3月14日免费VPN节点 | 18.9M/S|2025年V2ray/Clash/SSR/Shadowrocket免费订阅链接地址">3月14日免费VPN节点 | 18.9M/S|2025年V2ray/Clash/SSR/Shadowrocket免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-74296.htm" title="C语言数据结构、十字链表的分析及实现">C语言数据结构、十字链表的分析及实现</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-26-node-share.htm" title="3月26日免费VPN节点 | 20.6M/S|2025年Shadowrocket/SSR/V2ray/Clash免费订阅链接地址">3月26日免费VPN节点 | 20.6M/S|2025年Shadowrocket/SSR/V2ray/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-75656.htm" title="关于Java 信号量 Semaphore">关于Java 信号量 Semaphore</a></li>
+                        <li class="py-2"><a href="/news/article-82524.htm" title="宠物粮食加工厂怎么起步做生意呢赚钱吗（宠物粮食加工厂好做吗）">宠物粮食加工厂怎么起步做生意呢赚钱吗（宠物粮食加工厂好做吗）</a></li>
+                        <li class="py-2"><a href="/news/article-78361.htm" title="宠物粮原料构成（宠物粮主要原料）">宠物粮原料构成（宠物粮主要原料）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-16-node-share.htm" title="3月16日免费VPN节点 | 21.3M/S|2025年V2ray/Shadowrocket/Clash/SSR免费订阅链接地址">3月16日免费VPN节点 | 21.3M/S|2025年V2ray/Shadowrocket/Clash/SSR免费订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Free VPN Node节点机场订阅官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
