@@ -1,0 +1,210 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freevpnnode.github.io/news/article-88256.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CentOS7离线安装Nginx及配置</title>
+        <meta name="description" content="下载离线包： 用浏览器打开地址，选择您要下载的版本：http://nginx.org/packages/centos/7/x86_64/RPMS/  如图，我下载的1.16.1版。 执行安装： 将下载" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free VPN Node节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freevpnnode.github.io/news/article-88256.htm" />
+    <meta property="og:site_name" content="Free VPN Node节点机场订阅官网" />
+    <meta property="og:title" content="CentOS7离线安装Nginx及配置" />
+    <meta property="og:image" content="https://freevpnnode.github.io/uploads/20240922-1/fe4c711ead34d2ee561adbc2f5cb1a0b.webp" />
+        <meta property="og:release_date" content="2025-04-04T09:08:48" />
+    <meta property="og:updated_time" content="2025-04-04T09:08:48" />
+        <meta property="og:description" content="下载离线包： 用浏览器打开地址，选择您要下载的版本：http://nginx.org/packages/centos/7/x86_64/RPMS/  如图，我下载的1.16.1版。 执行安装： 将下载" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="CentOS7离线安装Nginx及配置">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2KW97MK5T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C2KW97MK5T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Free VPN Node                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">CentOS7离线安装Nginx及配置</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <p>下载离线包：</p> <p>用浏览器打开地址，选择您要下载的版本：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://nginx.org/packages/centos/7/x86_64/RPMS/"  rel="nofollow">http://nginx.org/packages/centos/7/x86_64/RPMS/</a></p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220604/5c4c562083c96bdd09561153b9851531.jpg"></p> <p>如图，我下载的1.16.1版。</p> <p>执行安装：</p> <p>将下载的rpm包上传到服务器，然后赋予可执行权限，执行安装。</p> <pre>sudo yum install -y nginx-1.16.1-1.el7.ngx.x86_64.rpm</pre> <p>启动Nginx并设置开机启动</p> <pre>sudo service nginx start #或者 sudo systemctl start nginx.service sudo systemctl enable nginx.service</pre> <p>查看Nginx版本</p> <pre>nginx -v</pre> <p>查看Nginx启动状态</p> <pre>sudo service nginx status sudo systemctl status nginx.service</pre> <p>如图为正在运行状态：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220604/19c5516b4888c5b3e8d12e47988a3d5e.jpg"></p> <p>停止Nginx服务</p> <p>查看Nginx位置：</p> <pre>whereis nginx sudo whereis nginx</pre> <p>默认安装则配置文件一般是这个：/etc/nginx/nginx.conf</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220604/a5c7cc15cb7b4ff80443f93f1b06f492.jpg"></p> <p>&nbsp;root用户启动nginx默认监听80端口：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220604/fb82c3cdffccffdfeb41489acfebe616.jpg"></p> <p>&nbsp;此时，如果您用浏览器访问却看不见这个界面，仍然打不开有可能是服务器防火墙拦截了80端口。去设置允许80端口，或者直接关闭防火墙即可。</p> <pre>sudo systemctl stop firewalld.service sudo systemctl disable firewalld.service</pre> <p>然后再访问：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220604/3edce9da6fceacaca8b27091d4ee9164.jpg"></p> <p>&nbsp;就正常了</p> <p>卸载Nginx</p> <pre>yum remove nginx</pre> <p>检查配置文件是否正确</p> <pre>nginx -t -c /usr/nginx/conf/nginx.conf  # 或者 /usr/nginx/sbin/nginx -t</pre> <p>重启Nginx</p> <pre>nginx -s reload  /usr/nginx/sbin/nginx -s reload</pre> <p>安装后一般会自动创建nginx用户：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220604/877efe0b0f2586a2f2afb6d9acd2b236.jpg"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-87520.htm">延吉动物医院在哪里预约 延吉动物医院在哪里预约挂号</a></p>
+                                        <p>下一个：<a href="/news/article-88257.htm">css本文在背景之上,css实现文字在背景图片之上</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-82524.htm" title="宠物粮食加工厂怎么起步做生意呢赚钱吗（宠物粮食加工厂好做吗）">宠物粮食加工厂怎么起步做生意呢赚钱吗（宠物粮食加工厂好做吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-26-node-share.htm" title="3月26日免费VPN节点 | 20.6M/S|2025年Shadowrocket/SSR/V2ray/Clash免费订阅链接地址">3月26日免费VPN节点 | 20.6M/S|2025年Shadowrocket/SSR/V2ray/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-76989.htm" title="SpringCloud系列之分布式请求链路跟踪(Sleuth)">SpringCloud系列之分布式请求链路跟踪(Sleuth)</a></li>
+                        <li class="py-2"><a href="/news/article-87519.htm" title="护肤品牌排行榜10强有哪些（护肤品牌排名榜）">护肤品牌排行榜10强有哪些（护肤品牌排名榜）</a></li>
+                        <li class="py-2"><a href="/news/article-85375.htm" title="宠物粮在哪里买便宜（宠物粮在哪里买比较放心）">宠物粮在哪里买便宜（宠物粮在哪里买比较放心）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-free-v2ray.htm" title="3月31日免费VPN节点 | 20.5M/S|2025年SSR/Clash/V2ray/Shadowrocket免费订阅链接地址">3月31日免费VPN节点 | 20.5M/S|2025年SSR/Clash/V2ray/Shadowrocket免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-77683.htm" title="重庆哪儿可以领养宠物猫（重庆在哪里可以领养猫咪）">重庆哪儿可以领养宠物猫（重庆在哪里可以领养猫咪）</a></li>
+                        <li class="py-2"><a href="/news/article-75656.htm" title="关于Java 信号量 Semaphore">关于Java 信号量 Semaphore</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-node-share-links.htm" title="3月30日免费VPN节点 | 22.8M/S|2025年V2ray/SSR/Clash/Shadowrocket免费订阅链接地址">3月30日免费VPN节点 | 22.8M/S|2025年V2ray/SSR/Clash/Shadowrocket免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-88257.htm" title="css本文在背景之上,css实现文字在背景图片之上">css本文在背景之上,css实现文字在背景图片之上</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <p>
+                <a href="/">Free VPN Node节点机场订阅官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>

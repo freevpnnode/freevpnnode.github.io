@@ -128,6 +128,7 @@
                   				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">报错信息1</a></li> <li><a href="#_label1" rel="nofollow">报错信息2</a></li> <li><a href="#_label2" rel="nofollow">解决办法</a></li> <li><a href="#_label3" rel="nofollow">网上解决方法</a></li> <li><a href="#_label4" rel="nofollow">我的解决方案</a></li> </ul> </div> <p>太难了，两天没有学习了，这个问题卡了很久，差点就放弃了，今天终于解决了，继续学习Vue！</p> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>报错信息1</h2> <blockquote> <p>ERROR  Failed to compile with 6 errors                                                                                    7:45:21 PM</p> <p> error  in ./src/components/advanceDemo/toastCom.vue?vue&amp;type=style&amp;index=0&amp;id=6f04d134&amp;lang=scss&amp;scoped=true&amp;</p> <p>Syntax Error: TypeError: this.getOptions is not a function</p> </blockquote> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>报错信息2</h2> <blockquote> <p>1 error generated.<br />make: *** [Release/obj.target/binding/src/binding.o] Error 1<br />gyp ERR! build error<br />gyp ERR! stack Error: `make` failed with exit code: 2<br />gyp ERR! stack     at ChildProcess.onExit (/Users/goldwater/Documents/vue/vue3.0-demo/node_modules/node-gyp/lib/build.js:262:23)<br />gyp ERR! stack     at ChildProcess.emit (node:events:394:28)<br />gyp ERR! stack     at Process.ChildProcess._handle.onexit (node:internal/child_process:290:12)<br />gyp ERR! System Darwin 20.2.0<br />gyp ERR! command "/usr/local/bin/node" "/Users/goldwater/Documents/projectCode/project-learning-repository/vue/vue3.0-demo/node_modules/node-gyp/bin/node-gyp.js" "rebuild" "--verbose" "--libsass_ext=" "--libsass_cflags=" "--libsass_ldflags=" "--libsass_library="<br />gyp ERR! cwd /Users/goldwater/Documents/vue/vue3.0-demo/node_modules/node-sass<br />gyp ERR! node -v v16.6.0<br />gyp ERR! node-gyp -v v3.8.0<br />gyp ERR! not ok<br />Build failed with error code: 1<br />npm WARN vue-loader@16.4.1 requires a peer of @vue/compiler-sfc@^3.0.8 but none is installed. You must install peer dependencies yourself.<br />npm WARN sass-loader@8.0.2 requires a peer of sass@^1.3.0 but none is installed. You must install peer dependencies yourself.<br />npm WARN sass-loader@8.0.2 requires a peer of fibers@&gt;= 3.1.0 but none is installed. You must install peer dependencies yourself.</p> <p>npm ERR! code ELIFECYCLE<br />npm ERR! errno 1<br />npm ERR! node-sass@4.14.1 postinstall: `node scripts/build.js`<br />npm ERR! Exit status 1<br />npm ERR!<br />npm ERR! Failed at the node-sass@4.14.1 postinstall script.<br />npm ERR! This is probably not a problem with npm. There is likely additional logging output above.</p> <p>npm ERR! A complete log of this run can be found in:<br />npm ERR!     /Users/goldwater/.npm/_logs/2021-08-06T12_04_18_807Z-debug.log</p> </blockquote> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>解决办法</h2> <p>时代在发展，更新换代很快，作为一个前端小白在网上找了很多方法，最后还是请教一位老司机，解决了问题，下面说一下我解决的过程，<strong>让后人成功避开</strong>。</p> <p>首先要先把上网环境解决了，在~/.npmrc添加以下镜像：</p> <div class="ay1code"> <pre class="brush:plain;">phantomjs_cdnurl=http://cnpmjs.org/downloads  sass_binary_site=https://npm.taobao.org/mirrors/node-sass/  registry=https://registry.npm.taobao.org</pre> </div> <p class="maodian"><a name="_label3" rel="nofollow"></a></p> <h2>网上解决方法</h2> <p>去官方的github仓库去寻找合适的版本</p> <p>node-sass: <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/sass/node-sass/tags"   target="_blank" rel="nofollow">https://github.com/sass/node-sass/tags</a></p> <p>sass-loader: <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/webpack-contrib/sass-loader/tags"   target="_blank" rel="nofollow">https://github.com/webpack-contrib/sass-loader/tags</a></p> <div class="ay1code"> <pre class="brush:plain;">npm uninstall sass-loader node-sass    //卸载  npm install sass-loader@7.3.1 node-sass@4.14.1  --save-dev  //安装对应的版本  </pre> </div> <p>最后，还是失败了。</p> <p class="maodian"><a name="_label4" rel="nofollow"></a></p> <h2>我的解决方案</h2> <p><strong>执行以下脚本：</strong></p> <div class="ay1code"> <pre class="brush:plain;">npm uninstall sass-loader node-sass  npm install sass-loader@8.0.2 sass@1.26.5  --save-dev  </pre> </div> <p>不要安装node-sass，安装sass就可以了，package.json如下：</p> <div class="ay1code"> <pre class="brush:js;">{    "name": "vue3.0-demo-1",    "version": "0.1.0",    "private": true,    "scripts": {      "serve": "vue-cli-service serve",      "build": "vue-cli-service build"    },    "dependencies": {      "core-js": "^3.6.5",      "joi": "^17.4.2",      "vue": "^2.6.11"    },    "devDependencies": {      "@vue/cli-plugin-babel": "~4.5.0",      "@vue/cli-service": "~4.5.0",      "eslint": "^7.32.0",      "eslint-plugin-vue": "^7.15.0",      // 这两个是重点：sass、sass-loader      "sass": "^1.26.5",      "sass-loader": "^8.0.2",      "vue-template-compiler": "^2.6.11"    },    "browserslist": [      "&gt; 1%",      "last 2 versions",      "not dead"    ]  }  </pre> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-86812.htm">Metalama简介4.使用Fabric操作项目或命名空间</a></p>
+                                        <p>下一个：<a href="/news/article-87519.htm">护肤品牌排行榜10强有哪些（护肤品牌排名榜）</a></p>
                                     </div>
                                         </div>
                         <div class="col-md-3">
@@ -137,16 +138,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-85375.htm" title="宠物粮在哪里买便宜（宠物粮在哪里买比较放心）">宠物粮在哪里买便宜（宠物粮在哪里买比较放心）</a></li>
-                        <li class="py-2"><a href="/news/article-81807.htm" title="动物疫苗品牌顿宝（动物疫苗龙头股排名）">动物疫苗品牌顿宝（动物疫苗龙头股排名）</a></li>
+                        <li class="py-2"><a href="/news/article-76329.htm" title="JavaScript如何添加用于将案例交换到字符串原型对象的函数">JavaScript如何添加用于将案例交换到字符串原型对象的函数</a></li>
+                        <li class="py-2"><a href="/news/article-72291.htm" title="动物医院贵吗多少钱一次 动物医院贵吗多少钱一次啊">动物医院贵吗多少钱一次 动物医院贵吗多少钱一次啊</a></li>
                         <li class="py-2"><a href="/news/article-83234.htm" title="猫粮制作机器设备有哪些呢（猫粮制作过程视频）">猫粮制作机器设备有哪些呢（猫粮制作过程视频）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-3-9-free-v2ray-subscribe.htm" title="3月9日免费VPN节点 | 22.6M/S|2025年V2ray/Clash/Shadowrocket/SSR免费订阅链接地址">3月9日免费VPN节点 | 22.6M/S|2025年V2ray/Clash/Shadowrocket/SSR免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-4-2-node-share-links.htm" title="4月2日免费VPN节点 | 18.9M/S|2025年SSR/Clash/Shadowrocket/V2ray免费订阅链接地址">4月2日免费VPN节点 | 18.9M/S|2025年SSR/Clash/Shadowrocket/V2ray免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-76330.htm" title="动物疫苗经营许可证办理条件有哪些呢英语（办理动物疫苗销售需要哪些手续）">动物疫苗经营许可证办理条件有哪些呢英语（办理动物疫苗销售需要哪些手续）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-3-16-node-share.htm" title="3月16日免费VPN节点 | 21.3M/S|2025年V2ray/Shadowrocket/Clash/SSR免费订阅链接地址">3月16日免费VPN节点 | 21.3M/S|2025年V2ray/Shadowrocket/Clash/SSR免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-75657.htm" title="解决Error response from daemon: Get “https://registry-1.docker.io/v2/“: read: connection refused问题">解决Error response from daemon: Get “https://registry-1.docker.io/v2/“: read: connection refused问题</a></li>
-                        <li class="py-2"><a href="/news/article-79055.htm" title="动物疫苗批号查询入口 动物疫苗批号查询入口官网">动物疫苗批号查询入口 动物疫苗批号查询入口官网</a></li>
-                        <li class="py-2"><a href="/news/article-69666.htm" title="Error response from daemon: Get https://registry-1.docker.io/v2/: net/http: TLS handshake timeout">Error response from daemon: Get https://registry-1.docker.io/v2/: net/http: TLS handshake timeout</a></li>
+                        <li class="py-2"><a href="/news/article-85375.htm" title="宠物粮在哪里买便宜（宠物粮在哪里买比较放心）">宠物粮在哪里买便宜（宠物粮在哪里买比较放心）</a></li>
+                        <li class="py-2"><a href="/news/article-82524.htm" title="宠物粮食加工厂怎么起步做生意呢赚钱吗（宠物粮食加工厂好做吗）">宠物粮食加工厂怎么起步做生意呢赚钱吗（宠物粮食加工厂好做吗）</a></li>
+                        <li class="py-2"><a href="/news/article-81807.htm" title="动物疫苗品牌顿宝（动物疫苗龙头股排名）">动物疫苗品牌顿宝（动物疫苗龙头股排名）</a></li>
+                        <li class="py-2"><a href="/news/article-81130.htm" title="猫驱虫一共多少钱（猫驱虫一共多少钱一次）">猫驱虫一共多少钱（猫驱虫一共多少钱一次）</a></li>
+                        <li class="py-2"><a href="/news/article-69012.htm" title="宠物粮食的品牌有哪些 宠物粮食的品牌有哪些牌子">宠物粮食的品牌有哪些 宠物粮食的品牌有哪些牌子</a></li>
+                        <li class="py-2"><a href="/news/article-67718.htm" title="中国前十宠物粮公司有哪些（中国宠物粮食公司）">中国前十宠物粮公司有哪些（中国宠物粮食公司）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-node-share.htm" title="3月4日免费VPN节点 | 21.1M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址">3月4日免费VPN节点 | 21.1M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -158,7 +159,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
@@ -176,15 +177,17 @@
         <!-- Main Content End -->
                 <!-- Copyright Start -->
         <div class="copyright">
-                            <p>
-                                <a href="/">首页</a> | 
-                                <a href="/free-node/">免费节点</a> | 
-                                <a href="/news/">新闻资讯</a> |
-                                <a href="/about-us.htm">关于我们</a> |
-                                <a href="/disclaimer.htm">免责申明</a> |
-                                <a href="/privacy.htm">隐私申明</a> |
-                                <a href="/sitemap.xml">网站地图</a>
-                            </p>
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
             <p>
                 <a href="/">Free VPN Node节点机场订阅官网</a> 版权所有 Powered by WordPress
             </p>
