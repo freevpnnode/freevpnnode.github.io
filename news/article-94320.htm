@@ -1,0 +1,210 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freevpnnode.github.io/news/article-94320.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Python——import、time、os、random模块</title>
+        <meta name="description" content="什么是模块？ 模块是 Python 程序架构的一个核心概念 • 每一个以扩展名py 结尾的 Python 源代码文件都是一个模块； • 模块名同样也是一个标识符，需要符合标识符的命名规则； • 模块就" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free VPN Node节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freevpnnode.github.io/news/article-94320.htm" />
+    <meta property="og:site_name" content="Free VPN Node节点机场订阅官网" />
+    <meta property="og:title" content="Python——import、time、os、random模块" />
+    <meta property="og:image" content="https://freevpnnode.github.io/uploads/20240922-1/7619a75e0c34e3cff335df8d42c8ac14.webp" />
+        <meta property="og:release_date" content="2025-04-12T08:58:28" />
+    <meta property="og:updated_time" content="2025-04-12T08:58:28" />
+        <meta property="og:description" content="什么是模块？ 模块是 Python 程序架构的一个核心概念 • 每一个以扩展名py 结尾的 Python 源代码文件都是一个模块； • 模块名同样也是一个标识符，需要符合标识符的命名规则； • 模块就" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Python——import、time、os、random模块">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2KW97MK5T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C2KW97MK5T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Free VPN Node                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">Python——import、time、os、random模块</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <blockquote> <p>什么是模块？<br /> 模块是 Python 程序架构的一个核心概念<br /> • 每一个以扩展名<strong>py</strong> 结尾的 Python 源代码文件都是一个模块；<br /> • 模块名同样也是一个<strong>标识符</strong>，需要符合标识符的命名规则；<br /> • 模块就好比是工具包，要想使用这个工具包中的工具，就需要先 导入import 这个模块；<br /> • 在模块中定义的 全局变量 、函数、类 都是提供给外界直接使用的工具。</p> </blockquote> <pre><code class="prism language-python"><span class="token comment"># 文件1：module01_fibonacci_返回小于n的数列值.py</span>  gl_num<span class="token operator">=</span><span class="token number">100</span><span class="token keyword">def</span><span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token triple-quoted-string string">"""生成值小于 n 的斐波那契数列"""</span>     a<span class="token punctuation">,</span> b<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token keyword">while</span> a<span class="token operator">&lt;</span> n<span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>         a<span class="token punctuation">,</span> b<span class="token operator">=</span> b<span class="token punctuation">,</span> a<span class="token operator">+</span>b<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">def</span><span class="token function">prt</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"我是模块1"</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"1-{n}范围内的斐波那契数列为："</span><span class="token punctuation">)</span></code></pre> <pre><code class="prism language-python"><span class="token comment"># 文件2：module02_fibonacci_返回n个数.py</span>  gl_num<span class="token operator">=</span><span class="token number">100</span><span class="token keyword">def</span><span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token triple-quoted-string string">"""生成 n 个斐波那契数列的值"""</span>     a<span class="token punctuation">,</span> b<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token keyword">for</span> i<span class="token keyword">in</span><span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>         a<span class="token punctuation">,</span> b<span class="token operator">=</span> b<span class="token punctuation">,</span> a<span class="token operator">+</span>b<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">def</span><span class="token function">prt</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"我是模块2"</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"前{n}个斐波那契数列为："</span><span class="token punctuation">)</span></code></pre> <pre><code class="prism language-python"><span class="token comment"># 在另一个文件中导入 module01 和 module02</span><span class="token keyword">import</span> module01_fibonacci_返回小于n的数列值<span class="token keyword">import</span> module02_fibonacci_返回n个数<span class="token keyword">print</span><span class="token punctuation">(</span>module01_fibonacci_返回小于n的数列值<span class="token punctuation">.</span>gl_num<span class="token punctuation">)</span><span class="token comment">#  调用module01 中的全局变量 gl_num1</span><span class="token keyword">print</span><span class="token punctuation">(</span>module02_fibonacci_返回n个数<span class="token punctuation">.</span>gl_num<span class="token punctuation">)</span><span class="token comment">#  调用module02 中的全局变量 gl_num2</span>  module01_fibonacci_返回小于n的数列值<span class="token punctuation">.</span>prt<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> module01_fibonacci_返回小于n的数列值<span class="token punctuation">.</span>fib<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token comment">#  调用module01 中的函数 fib1</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"-"</span><span class="token operator">*</span><span class="token number">20</span><span class="token punctuation">)</span> module02_fibonacci_返回n个数<span class="token punctuation">.</span>prt<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> module02_fibonacci_返回n个数<span class="token punctuation">.</span>fib<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token comment">#  调用module02 中的函数 fib2</span></code></pre> <p>需要在同一级文件，在 第三个程序mo1使用 import 导入 文件1：module01_fibonacci_返回小于n的数列值.py 、文件2：module02_fibonacci_返回n个数.py 执行mo1 才会出现以下成果<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220904/d2fa37fe0c0844c0e40849676eaca061.jpg" alt="Python——import、time、os、random模块"></p> <blockquote> <p>cpython-37 表示 Python 解释器的版本<br /> 这个 pyc 文件是由 Python 解释器将 模块的源码 转换为字节码，<strong>.pyc</strong>表示程序已经编译过</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220904/0a778840ad2979891818dbdae57aa6cb.jpg" alt="Python——import、time、os、random模块"></p> <blockquote> <p>使用 as 指定模块的别名 如果在开发过程中需要导入一些名称较长的模块，那么可使用as为这些模块起别名 import 模块名 as 别名<br /><strong>注意</strong>：模块别名 应该符合 大驼峰命名法（首字母大写）<br /> import module01_fibonacci_返回小于n的数列值 as FibMod</p> </blockquote> <pre><code class="prism language-python"><span class="token keyword">import</span> module01_fibonacci_返回小于n的数列值<span class="token keyword">as</span> FibMod<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"模块1中的全局变量："</span><span class="token punctuation">,</span> FibMod<span class="token punctuation">.</span>gl_num<span class="token punctuation">)</span> FibMod<span class="token punctuation">.</span>prt<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> FibMod<span class="token punctuation">.</span>fib<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span></code></pre> <blockquote> <p>语法：from 模块名 import 工具名 优点：导入之后，不需要 通过 模块名，可以直接使用 模块提供的工具<br /> 支持一次导入多个函数、类、变量等，函数与函数之间使用逗号隔开。</p> </blockquote> <pre><code class="prism language-python"><span class="token keyword">from</span> module01_fibonacci_返回小于n的数列值<span class="token keyword">import</span> fib<span class="token punctuation">,</span>prt prt<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> fib<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token triple-quoted-string string">'''注意： 如果 两个模块，存在 同名的函数，那么 后导入模块的函数，会 覆盖掉先导入的函数。 解决方法可以用 as 关键字 给其中一个工具起一个别名 '''</span><span class="token keyword">from</span> module01_fibonacci_返回小于n的数列值<span class="token keyword">import</span> fib<span class="token punctuation">,</span> prt<span class="token keyword">from</span> module02_fibonacci_返回n个数<span class="token keyword">import</span> fib<span class="token punctuation">,</span> prt<span class="token comment"># 后导入的同名函数覆盖之前导入的函数</span>  prt<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> fib<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span></code></pre> <p>利用通配符“*”可使用from…import…导入模块中的全部内容，语法格式如下：from 模块名 import *</p> <p><strong>小结</strong>：虽然通过“from 模块名 import …”方式可简化模块中内容的引用，但可能会出现函数重名的问题。因此，相对而言使用import语句导入模块更为安全。</p> <p><strong>模块位置搜索顺序<br /> 当导入一个模块时，python解释器对模块位置的搜索顺序为：</strong></p> <p>（1）当前目录，如果有就直接导入<br /> （2）如果没有，再搜索Python PATH环境变量下的每个目录<br /> （3）Python 中每一个模块都有一个内置属性<strong>file</strong> 可以 查看模块 的 完整路径<br /> （4）模块搜索路径存储在 sys 模块中的 sys.path变量中。</p> <pre><code class="prism language-python"><span class="token comment"># 内置属性 __file__ 查看模块的完整路径</span><span class="token keyword">import</span> module01_fibonacci_返回小于n的数列值<span class="token keyword">import</span> random<span class="token keyword">print</span><span class="token punctuation">(</span>module01_fibonacci_返回小于n的数列值<span class="token punctuation">.</span>__file__<span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>__file__<span class="token punctuation">)</span><span class="token comment">#列举模块内容： dir (模块名)</span><span class="token comment">#返回一个排好序的字符串列表，内容是模块中定义的变量和函数。</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">dir</span><span class="token punctuation">(</span>random<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment"># sys 模块中的 sys.path 搜索模块路径</span><span class="token keyword">import</span> sys<span class="token keyword">print</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>path<span class="token punctuation">)</span></code></pre> <p>每一个.py文件都应该是可以被导入的<br /> 在导入文件时，文件中 所有没有任何缩进的代码 都会被执行一遍！<br /> 这就会出现测试代码本来仅在模块内使用，然而被导入到其他文件中。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220904/b23ab23d9b6dd100e1a2b127905fe813.jpg" alt="Python——import、time、os、random模块"><br /><strong>如何把测试代码仅在模块内使用，不被导入到其他文件中？</strong><br /><strong>_name _ 属性可以做到！！</strong></p> <p>如果 是被其他文件导入的，_<em>name</em>_ 就是<strong>模块名</strong><br /><strong>如果 是当前执行的程序 _<em>name</em>_ 会等于 _<em>main</em>_</strong></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220904/6164933b83d26c12a2030cbfd27d561c.jpg" alt="Python——import、time、os、random模块"><br /> 在很多 Python 文件中都会看到以下格式的代码：</p> <pre><code class="prism language-python"><span class="token comment"># 导入模块</span><span class="token comment"># 定义全局变量</span><span class="token comment"># 定义类</span><span class="token comment"># 定义函数</span><span class="token comment"># 在代码的最下方</span><span class="token keyword">def</span><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment"># ...</span><span class="token keyword">pass</span><span class="token comment"># 根据 __name__ 判断是否执行下方代码</span><span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">"__main__"</span><span class="token punctuation">:</span>     main<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre> <h2><a id="time__153" rel="nofollow"></a>time 模块</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220904/6a7a7e565b0941bfff6ff3482c6af9d3.jpg" alt="Python——import、time、os、random模块"></p> <pre><code class="prism language-python"><span class="token keyword">import</span> time<span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"---start---"</span><span class="token punctuation">)</span> time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token comment"># 休眠2秒</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"-- end---"</span><span class="token punctuation">)</span></code></pre> <h2><a id="os_162" rel="nofollow"></a>os模块</h2> <p>提供了访问操作系统服务的功能，该模块中常用函数如下表所示。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220904/4a95a46f494792f11b851615942d069e.jpg" alt="Python——import、time、os、random模块"></p> <h2><a id="random_166" rel="nofollow"></a>random模块</h2> <p>随机数模块，该模块中定义了多个可产生各种随机数的函数。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220904/b9372102e04365f1d876ff5537c5e474.jpg" alt="Python——import、time、os、random模块"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-93410.htm">宠物领养协议书范本图片模板高清下载（宠物领养协议书怎么写）</a></p>
+                                        <p>下一个：<a href="/news/article-94321.htm">领养孩子协议书模板图片大全（领养孩子的协议书怎么写）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-7-clash-v2ray-ss-ssr.htm" title="4月7日免费VPN节点 | 21.3M/S|2025年SSR/Clash/Shadowrocket/V2ray免费订阅链接地址">4月7日免费VPN节点 | 21.3M/S|2025年SSR/Clash/Shadowrocket/V2ray免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-node-share.htm" title="3月6日免费VPN节点 | 22.1M/S|2025年V2ray/Clash/Shadowrocket/SSR免费订阅链接地址">3月6日免费VPN节点 | 22.1M/S|2025年V2ray/Clash/Shadowrocket/SSR免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-83235.htm" title="猫三联加狂犬疫苗一共几针,多少钱一针（猫三联和狂犬疫苗间隔多久打一次）">猫三联加狂犬疫苗一共几针,多少钱一针（猫三联和狂犬疫苗间隔多久打一次）</a></li>
+                        <li class="py-2"><a href="/news/article-89714.htm" title="什么样的狗粮才是好狗粮（什么样的狗粮性价比高）">什么样的狗粮才是好狗粮（什么样的狗粮性价比高）</a></li>
+                        <li class="py-2"><a href="/news/article-79752.htm" title="Java 使用 Maven BOM 统一管理版本号_在线工具">Java 使用 Maven BOM 统一管理版本号_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-95669.htm" title="宠物领养须知图片大全大图（宠物领养须知图片大全大图高清）">宠物领养须知图片大全大图（宠物领养须知图片大全大图高清）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-19-free-v2ray-subscribe.htm" title="3月19日免费VPN节点 | 18.2M/S|2025年Clash/Shadowrocket/V2ray/SSR免费订阅链接地址">3月19日免费VPN节点 | 18.2M/S|2025年Clash/Shadowrocket/V2ray/SSR免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-67717.htm" title="广州市宠物领养平台（广州宠物领养微信群）">广州市宠物领养平台（广州宠物领养微信群）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-free-high-speed-nodes.htm" title="3月24日免费VPN节点 | 19.2M/S|2025年V2ray/SSR/Shadowrocket/Clash免费订阅链接地址">3月24日免费VPN节点 | 19.2M/S|2025年V2ray/SSR/Shadowrocket/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-94321.htm" title="领养孩子协议书模板图片大全（领养孩子的协议书怎么写）">领养孩子协议书模板图片大全（领养孩子的协议书怎么写）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">42</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <p>
+                <a href="/">Free VPN Node节点机场订阅官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
