@@ -1,0 +1,213 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freevpnnode.github.io/news/article-101494.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>React 中事件的类型定义</title>
+        <meta name="description" content="基本的事件类型 React 搞了一套自己的事件类型，所以你没办法使用 TypeScript 内置提供的 MouseEvent 等等。在需要定义事件类型的时候，需要从 React 中导入： import" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free VPN Node节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freevpnnode.github.io/news/article-101494.htm" />
+    <meta property="og:site_name" content="Free VPN Node节点机场订阅官网" />
+    <meta property="og:title" content="React 中事件的类型定义" />
+    <meta property="og:image" content="https://freevpnnode.github.io/uploads/20240922-1/2847c9095b9bf0532495525f70075bc6.webp" />
+        <meta property="og:release_date" content="2025-04-22T08:23:47" />
+    <meta property="og:updated_time" content="2025-04-22T08:23:47" />
+        <meta property="og:description" content="基本的事件类型 React 搞了一套自己的事件类型，所以你没办法使用 TypeScript 内置提供的 MouseEvent 等等。在需要定义事件类型的时候，需要从 React 中导入： import" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="React 中事件的类型定义">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2KW97MK5T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C2KW97MK5T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Free VPN Node                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">React 中事件的类型定义</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="_0" rel="nofollow"></a>基本的事件类型</h2> <p>React 搞了一套自己的事件类型，所以你没办法使用 TypeScript 内置提供的 <code>MouseEvent</code> 等等。在需要定义事件类型的时候，需要从 React 中导入：</p> <pre><code class="prism language-ts"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{<!-- --></span> Component<span class="token punctuation">,</span> MouseEvent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>  <span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Button</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{<!-- --></span>   <span class="token function">handleClick</span><span class="token punctuation">(</span>event<span class="token operator">:</span> MouseEvent<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>     event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token function">alert</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>currentTarget<span class="token punctuation">.</span>tagName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// alerts BUTTON</span>   <span class="token punctuation">}</span>      <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>     <span class="token keyword">return</span> <span class="token punctuation">(</span>     <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token keyword">this</span><span class="token punctuation">.</span>handleClick<span class="token punctuation">}</span><span class="token operator">&gt;</span>       <span class="token punctuation">{<!-- --></span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>children<span class="token punctuation">}</span>     <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>     <span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <p>React 提供的事件类型有： <code>AnimationEvent</code>, <code>ChangeEvent</code>, <code>ClipboardEvent</code>, <code>CompositionEvent</code>, <code>DragEvent</code>, <code>FocusEvent</code>, <code>FormEvent</code>, <code>KeyboardEvent</code>, <code>MouseEvent</code>, <code>PointerEvent</code>, <code>TouchEvent</code>, <code>TransitionEvent</code>, <code>WheelEvent</code>。还有一个 <code>SyntheticEvent</code>，用于其他所有的事件。</p> <h2> <a id="_23" rel="nofollow"></a>限制性的事件类型</h2> <p>如果需要限制事件类型，可以利用事件类型的泛型：</p> <pre><code class="prism language-ts"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{<!-- --></span> Component<span class="token punctuation">,</span> MouseEvent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>  <span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Button</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{<!-- --></span>   <span class="token comment">/*    * 这里我们将 handleClick 限制只能是在 HTMLButton 元素上    */</span>   <span class="token function">handleClick</span><span class="token punctuation">(</span>event<span class="token operator">:</span> MouseEvent<span class="token operator">&lt;</span>HTMLButtonElement<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>     event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token function">alert</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>currentTarget<span class="token punctuation">.</span>tagName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// alerts BUTTON</span>   <span class="token punctuation">}</span>    <span class="token comment">/*     * 支持联合类型    */</span>   <span class="token function">handleAnotherClick</span><span class="token punctuation">(</span>event<span class="token operator">:</span> MouseEvent<span class="token operator">&lt;</span>HTMLButtonElement <span class="token operator">|</span> HTMLAnchorElement<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>     event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'Yeah!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token punctuation">}</span>    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>     <span class="token keyword">return</span> <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token keyword">this</span><span class="token punctuation">.</span>handleClick<span class="token punctuation">}</span><span class="token operator">&gt;</span>       <span class="token punctuation">{<!-- --></span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>children<span class="token punctuation">}</span>     <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>   <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <p>这里的限定的类型是 TypeScript 提供的 DOM 元素类型。</p> <h2> <a id="Reference_58" rel="nofollow"></a>Reference</h2> <p>[1] <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://fettblog.eu/typescript-react/events/"  rel="nofollow">TypeScript and React: Events</a></p> </p></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-100801.htm">动物疫苗属于兽药吗知乎文章内容（给动物注射疫苗属于）</a></p>
+                                        <p>下一个：<a href="/news/article-101495.htm">Java时间 之 Instant</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-9-free-v2ray-subscribe.htm" title="3月9日免费VPN节点 | 22.6M/S|2025年V2ray/Clash/Shadowrocket/SSR免费订阅链接地址">3月9日免费VPN节点 | 22.6M/S|2025年V2ray/Clash/Shadowrocket/SSR免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-1-free-v2ray.htm" title="4月1日免费VPN节点 | 20M/S|2025年SSR/Shadowrocket/Clash/V2ray免费订阅链接地址">4月1日免费VPN节点 | 20M/S|2025年SSR/Shadowrocket/Clash/V2ray免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-node-share.htm" title="3月4日免费VPN节点 | 21.1M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址">3月4日免费VPN节点 | 21.1M/S|2025年SSR/V2ray/Shadowrocket/Clash免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-90461.htm" title="vue3-setup中使用mapState">vue3-setup中使用mapState</a></li>
+                        <li class="py-2"><a href="/news/article-98551.htm" title="佳雯宠物医院几点开门营业（佳雯宠物医院环城西路）">佳雯宠物医院几点开门营业（佳雯宠物医院环城西路）</a></li>
+                        <li class="py-2"><a href="/news/article-94320.htm" title="Python——import、time、os、random模块">Python——import、time、os、random模块</a></li>
+                        <li class="py-2"><a href="/news/article-89713.htm" title="浅谈快速傅里叶变化的Matlab与Python实现与区别">浅谈快速傅里叶变化的Matlab与Python实现与区别</a></li>
+                        <li class="py-2"><a href="/news/article-68357.htm" title="淮南领养狗狗（淮南市哪里可以领养小动物）">淮南领养狗狗（淮南市哪里可以领养小动物）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-node-share.htm" title="3月21日免费VPN节点 | 21.7M/S|2025年Clash/V2ray/Shadowrocket/SSR免费订阅链接地址">3月21日免费VPN节点 | 21.7M/S|2025年Clash/V2ray/Shadowrocket/SSR免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-83938.htm" title="猫宠清驱虫药说明书电子版（宠物猫驱虫药怎么使用）">猫宠清驱虫药说明书电子版（宠物猫驱虫药怎么使用）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">68</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <p>
+                <a href="/">Free VPN Node节点机场订阅官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
