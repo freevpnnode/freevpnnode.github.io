@@ -1,0 +1,213 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freevpnnode.github.io/news/article-103848.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>.Net中字符串不变性与相等判断的特殊场景</title>
+        <meta name="description" content="今天写bug的时候帮同事解决了一个有趣的问题，可能很多人都会答错。分享给大家。  请看以下例子，并回答问题。 var s1 = "12"; var s2 = "12";  //序列化方式1 var o" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free VPN Node节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freevpnnode.github.io/news/article-103848.htm" />
+    <meta property="og:site_name" content="Free VPN Node节点机场订阅官网" />
+    <meta property="og:title" content=".Net中字符串不变性与相等判断的特殊场景" />
+    <meta property="og:image" content="https://freevpnnode.github.io/uploads/20240922-1/08b23ed63c524bdfee2572515b8b88ad.webp" />
+        <meta property="og:release_date" content="2025-04-25T07:08:22" />
+    <meta property="og:updated_time" content="2025-04-25T07:08:22" />
+        <meta property="og:description" content="今天写bug的时候帮同事解决了一个有趣的问题，可能很多人都会答错。分享给大家。  请看以下例子，并回答问题。 var s1 = "12"; var s2 = "12";  //序列化方式1 var o" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content=".Net中字符串不变性与相等判断的特殊场景">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2KW97MK5T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C2KW97MK5T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Free VPN Node                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">.Net中字符串不变性与相等判断的特殊场景</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<p>今天写bug的时候帮同事解决了一个有趣的问题，可能很多人都会答错。分享给大家。</p> </h1> <p>请看以下例子，并回答问题。</p> <pre><code class="language-c#">var s1 = "12"; var s2 = "12";  //序列化方式1 var o3 = Newtonsoft.Json.JsonConvert.DeserializeObject&lt;string&gt;(Newtonsoft.Json.JsonConvert.SerializeObject(s1)); //序列化方式2 MemoryStream stream = new MemoryStream(); System.Runtime.Serialization.Formatters.Binary.BinaryFormatter bf = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter(); bf.Serialize(stream, s1); stream.Seek(0, SeekOrigin.Begin); var o4 = bf.Deserialize(stream);  //====分割线===================================================  var e1 = object.ReferenceEquals(s1, s2);  var e2 = o4 == s1;  var e3 = s1.Equals(o4);  var e4 = o3 == o4;  Console.ReadKey();</code></pre> <p>请回答分割线后e1, e2, e3, e4 值为true还是false。</p> <p>人人都知道在.Net中字符串是享元模式的经典范例。字符串具有不变性。（至少在托管层，事实上可以在非托管层修改字符串的值），但你真的能回答对上面的问题么？</p> <hr/> </h1> <pre><code class="language-c#"> e1 = true; e2 = false; e3 = true; e4 = false;</code></pre> <p>要了解这个问题首先可以看下字符串在内存中的布局。</p> <h2 id="如何在visual-studio中查看变量的内存布局">如何在visual studio中查看变量的内存布局</h2> <p>在VS中可以非常方便的查看托管或非托管变量的内存值。方法如下。</p> <ul> <li>依次在调试模式下打开 调试 -&gt; 窗口 -&gt; 内存 -&gt; 内存1（1~4均可） 打开内存对话框。</li> <li>在地址栏中输入引用类型的变量名即可。</li> <li><strong>如果你的数据是struct类型则需要加&amp;取地址符。</strong></li> </ul> <h2 id="字符串变量在内存中的布局">字符串变量在内存中的布局</h2> <p>在.Net中字符串是以UTF-16格式在内存中保存的。在本例中s1的内存如下。</p> <p><code>00 00 00 00 00 00 00 00 98 d6 fc e5 fb 7f 00 00 02 00 00 00 31 00 32 00</code></p> <p>这里可能与你拿到的结果不一样。你可能并没有前8位<code>0x00</code>，因为我把对象头带上了。下面依次解释各段含义。</p> <ul> <li><code>00 00 00 00 00 00 00 00</code> 最开始的8比特是对象头。其中，在64位下，高4位为0，低4位为一个不为0的数（这里由于并没有执行lock或Gethashcode操作，所以这里为0，感兴趣的自行实验.）</li> <li><code>98 d6 fc e5 fb 7f 00 00</code>对象的<code>MethodTable</code>，根据类型而不同,对象的引用指向的位置。</li> <li><code>02 00 00 00</code> 字符串长度，这里是2。</li> <li><code>31 00 32 00</code> 字符串数组<code>* char</code>，注意都是小端模式。</li> </ul> <p>拿以上<code>s1 s2 o3 o4</code>分别实验可以发现<strong>他们的内存一模一样</strong>，其中<code>s1 s2</code>直接就是同一块内存地址，<strong>但剩下的内存地址都不一样</strong>。</p> <h2 id="比较与解答">比较与解答</h2> <ol> <li> <p><code>e1 = true;</code> 通过内存看合情合理，毕竟都同一块内存了。</p> </li> <li> <p><code>e2 = false;</code> 这里如果用的VS的版本比较高的话，也能看出来。因为这里VS会提示：</p> <blockquote> <p>可能非有意的引用比较。</p> </blockquote> <p>既然是引用比较，内存地址都不一样，肯定是false了。但是如果vs版本不高的话则迷惑性就较大了，其实这里做的是<code>ReferenceEquals</code>的比较。</p> </li> <li> <p><code>e3 = true;</code> 这里问题出在.Net代码里。字符串类型<code>Equals</code>方法被重载了。</p> </li> </ol> <pre><code class="language-c#">        // Determines whether two strings match.         public override bool Equals([NotNullWhen(true)] object? obj)         {             if (object.ReferenceEquals(this, obj))                 return true;              if (!(obj is string str))                 return false;              if (this.Length != str.Length)                 return false;              return EqualsHelper(this, str);         }</code></pre> <p><code>EqualsHelper</code>方法最终则调用如下。（在.Net 6下）</p> <pre><code class="language-c#">        // Optimized byte-based SequenceEquals. The "length" parameter for this one is declared a nuint rather than int as we also use it for types other than byte         // where the length can exceed 2Gb once scaled by sizeof(T).         public static unsafe bool SequenceEqual(ref byte first, ref byte second, nuint length)</code></pre> <p>由于实现过于复杂（.Net framework 4.5.2下则较简单，直接按长度比较char，有兴趣的自行查阅），这里就不贴具体实现了。我们很容易看出这里比较的目的是比较两段内存是否相等，显然为<code>true</code>。</p> <ol start="4"> <li><code>e4 = false;</code>这里是为了比较不同序列化方式的影响，和<code>e2</code>类似，结果显然是<code>false</code>。</li> </ol> </h1> <p>虽然.Net中字符串是享元模式创建的，但并不能保证同一字符串在内存里只有一份。比如序列化情况等例外情况。如果读者知道其他情况也可以告诉我，提前说声感谢</p> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-103106.htm">宠物粮食市场前景如何呢视频讲解（宠物粮食行业发展前景）</a></p>
+                                        <p>下一个：<a href="/news/article-103850.htm">动物医院好评模板怎么写范文大全（动物医院大众点评评语）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-78360.htm" title="正规的宠物领养网站推荐一下（比较正规的宠物领养平台）">正规的宠物领养网站推荐一下（比较正规的宠物领养平台）</a></li>
+                        <li class="py-2"><a href="/news/article-101494.htm" title="React 中事件的类型定义">React 中事件的类型定义</a></li>
+                        <li class="py-2"><a href="/news/article-70339.htm" title="南京宠物领养中心有哪些地址 南京宠物领养中心有哪些地址和电话">南京宠物领养中心有哪些地址 南京宠物领养中心有哪些地址和电话</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-node-share-links.htm" title="3月25日免费VPN节点 | 22.7M/S|2025年Shadowrocket/Clash/SSR/V2ray免费订阅链接地址">3月25日免费VPN节点 | 22.7M/S|2025年Shadowrocket/Clash/SSR/V2ray免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-94321.htm" title="领养孩子协议书模板图片大全（领养孩子的协议书怎么写）">领养孩子协议书模板图片大全（领养孩子的协议书怎么写）</a></li>
+                        <li class="py-2"><a href="/news/article-97097.htm" title="动物疫苗间隔时间多久打一次 动物疫苗间隔时间多久打一次好">动物疫苗间隔时间多久打一次 动物疫苗间隔时间多久打一次好</a></li>
+                        <li class="py-2"><a href="/news/article-74297.htm" title="python mysql where in 对列表（list,,array）问题">python mysql where in 对列表（list,,array）问题</a></li>
+                        <li class="py-2"><a href="/news/article-71641.htm" title="由浅入深快速掌握Java 数组的使用_java">由浅入深快速掌握Java 数组的使用_java</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-node-share.htm" title="3月6日免费VPN节点 | 22.1M/S|2025年V2ray/Clash/Shadowrocket/SSR免费订阅链接地址">3月6日免费VPN节点 | 22.1M/S|2025年V2ray/Clash/Shadowrocket/SSR免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-free-node-subscribe.htm" title="3月18日免费VPN节点 | 22.7M/S|2025年Shadowrocket/Clash/SSR/V2ray免费订阅链接地址">3月18日免费VPN节点 | 22.7M/S|2025年Shadowrocket/Clash/SSR/V2ray免费订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">79</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <p>
+                <a href="/">Free VPN Node节点机场订阅官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
