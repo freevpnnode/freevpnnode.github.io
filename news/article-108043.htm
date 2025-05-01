@@ -1,0 +1,213 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freevpnnode.github.io/news/article-108043.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>vue打包后整合到springboot项目、并打包成jar上传到Linux服务器运行【前后端分离开发、整体部署到Linux服务器】</title>
+        <meta name="description" content="当开发完前端工程后，执行npm run build进行打包 npm run build 默认会生成dist文件夹&nbsp; 里面包含了整个前端项目处理后的静态文件 进入dist文件夹&nbsp; 复" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free VPN Node节点机场订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freevpnnode.github.io/news/article-108043.htm" />
+    <meta property="og:site_name" content="Free VPN Node节点机场订阅官网" />
+    <meta property="og:title" content="vue打包后整合到springboot项目、并打包成jar上传到Linux服务器运行【前后端分离开发、整体部署到Linux服务器】" />
+    <meta property="og:image" content="https://freevpnnode.github.io/uploads/20240922-1/3a9aa17cef90880053cf7eaaa374654e.webp" />
+        <meta property="og:release_date" content="2025-04-30T09:34:01" />
+    <meta property="og:updated_time" content="2025-04-30T09:34:01" />
+        <meta property="og:description" content="当开发完前端工程后，执行npm run build进行打包 npm run build 默认会生成dist文件夹&nbsp; 里面包含了整个前端项目处理后的静态文件 进入dist文件夹&nbsp; 复" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue打包后整合到springboot项目、并打包成jar上传到Linux服务器运行【前后端分离开发、整体部署到Linux服务器】">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2KW97MK5T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C2KW97MK5T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Free VPN Node                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">vue打包后整合到springboot项目、并打包成jar上传到Linux服务器运行【前后端分离开发、整体部署到Linux服务器】</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="V2ray X节点订阅官网" data-url="https://v2rayx.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>当开发完前端工程后，执行<span style="color:#956fe7;"><strong>npm run build</strong></span>进行打包</p> <pre><code>npm run build</code></pre> <p>默认会生成<span style="color:#956fe7;"><strong>dist</strong></span>文件夹&nbsp; 里面包含了整个前端项目处理后的静态文件</p> <p>进入<span style="color:#956fe7;"><strong>dist</strong></span>文件夹&nbsp; 复制里面的所有文件</p> <p>进入到<span style="color:#956fe7;"><strong>springboot</strong></span>项目中</p> <p>在<span style="color:#956fe7;"><strong>resources</strong></span>目录下新建<strong><span style="color:#956fe7;">static</span></strong>文件夹</p> <p>将刚才从<strong><span style="color:#956fe7;">dist</span></strong>复制的文件粘贴到<span style="color:#956fe7;"><strong>static</strong></span>里面</p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220603/35e5fab543f17c2cf7a66e29f8da5203.jpg"></p> <p>&nbsp;这个时候就整合到一块了</p> <p>此时<span style="color:#956fe7;"><strong>index.html</strong></span>默认引入的静态资源路径可能会有虚线警告</p> <p>无视它就行了，因为这个路径是没问题的</p> <p>然后运行<span style="color:#956fe7;"><strong>springboot</strong></span>项目<strong><span style="color:#956fe7;">shift+F10</span></strong></p> <p>访问后端启动地址就能访问到项目了</p> <hr/> <p>最终开发完毕后要上传到服务器时</p> <p>先将此<span style="color:#956fe7;"><strong>maven</strong></span>项目打包</p> <p>如图所示</p> <p>点击执行<strong><span style="color:#956fe7;">mvn package</span></strong>就会打包了</p> <pre><code>mvn package</code></pre> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220603/b7f67cbdeca9d5bb3290b345e4342960.jpg"></p> <p>&nbsp;打包完毕后会在项目目录中生成一个<strong><span style="color:#956fe7;">target</span></strong>文件夹</p> <p>里面有一个<strong><span style="color:#956fe7;">.jar</span></strong>结尾的文件包就是目标产物</p> <p>还有一个<strong><span style="color:#956fe7;">.jar.original</span></strong>用不到&nbsp; 请无视它</p> <hr/> <p>将<strong><span style="color:#956fe7;">.jar</span></strong>结尾的文件通过XFTP上传到服务器根目录（<strong><span style="color:#956fe7;">/root</span></strong>）下</p> <p><span style="color:#a5a5a5;"><em>如何使用Xshell XFTP 请看我的另一篇文章，安装JDK、nginx、mysql的那篇文章</em></span></p> <p><img fetchpriority="high" decoding="async" alt="" height="201" src="http://img.555519.xyz/uploads3/20220603/848c4749c687b49e76f06d45ed161f96.jpg"></p> <p>&nbsp;然后在<span style="color:#956fe7;"><strong>linux</strong></span>命令行执行命令运行<span style="color:#956fe7;"><strong>jar</strong></span>文件</p> <p><strong><span style="color:#956fe7;">***</span></strong>就是你自己的<span style="color:#956fe7;"><strong>jar</strong></span>文件名</p> <pre><code>java -jar ***.jar</code></pre> <p>执行这句代码让程序一直在后端运行</p> <p>这样即使关闭<span style="color:#956fe7;"><strong>xshell</strong></span>连接也能访问到项目</p> <pre><code>nohup java -jar  ***.jar  &amp;</code></pre> <p>然后输入公网IP+端口就能访问了</p> <p>如果这边文章对你有那么一点点帮助，请点个赞再走，这会对我很有帮助！</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-107257.htm">宠物店一个月用多少吨水 宠物店一个月用多少吨水正常</a></p>
+                                        <p>下一个：<a href="/news/article-108044.htm">猫咪三针疫苗间隔必须按规定时间吗（猫咪三针疫苗间隔必须按规定时间吗多久）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-5-1-free-node-subscribe-links.htm" title="5月1日免费VPN节点 | 20.1M/S|2025年Clash/SSR/V2ray/Shadowrocket免费订阅链接地址">5月1日免费VPN节点 | 20.1M/S|2025年Clash/SSR/V2ray/Shadowrocket免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-92647.htm" title="狗狗疫苗可以自己打不（狗的疫苗能自己打吗）">狗狗疫苗可以自己打不（狗的疫苗能自己打吗）</a></li>
+                        <li class="py-2"><a href="/news/article-91231.htm" title="宠物粮种类（宠物粮品牌大全）">宠物粮种类（宠物粮品牌大全）</a></li>
+                        <li class="py-2"><a href="/news/article-94931.htm" title="动物医院的英文翻译是什么意思（动物医院英语短语）">动物医院的英文翻译是什么意思（动物医院英语短语）</a></li>
+                        <li class="py-2"><a href="/news/article-101495.htm" title="Java时间 之 Instant">Java时间 之 Instant</a></li>
+                        <li class="py-2"><a href="/news/article-105452.htm" title="动物疫苗间隔时间多长可以打一针（动物疫苗注射后多久产生抗体）">动物疫苗间隔时间多长可以打一针（动物疫苗注射后多久产生抗体）</a></li>
+                        <li class="py-2"><a href="/news/article-86085.htm" title="动物防疫疫苗与接种的关系 动物防疫疫苗与接种的关系是什么">动物防疫疫苗与接种的关系 动物防疫疫苗与接种的关系是什么</a></li>
+                        <li class="py-2"><a href="/news/article-103102.htm" title="动物医院叫什么医院名称呢英文（动物医院的名字）">动物医院叫什么医院名称呢英文（动物医院的名字）</a></li>
+                        <li class="py-2"><a href="/news/article-87520.htm" title="延吉动物医院在哪里预约 延吉动物医院在哪里预约挂号">延吉动物医院在哪里预约 延吉动物医院在哪里预约挂号</a></li>
+                        <li class="py-2"><a href="/news/article-91936.htm" title="动物疫苗公司招聘信息网 动物疫苗公司招聘信息网站">动物疫苗公司招聘信息网 动物疫苗公司招聘信息网站</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <p>
+                <a href="/">Free VPN Node节点机场订阅官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
