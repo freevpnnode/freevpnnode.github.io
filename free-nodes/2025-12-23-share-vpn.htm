@@ -161,9 +161,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         手动切换节点可以根据延迟和用途选择最佳节点，适合在节点不稳定或特殊需求下使用。虽然不支持自动订阅更新，但足够满足轻量用户对节点管理和分流的需求。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 的 TAP 模式与 TUN 模式区别是什么？</h5></div>
+    <div class="panel-heading"><h5>Clash 的规则模式有哪些？</h5></div>
     <div class="panel-body">
-        TAP 模式模拟以太网接口，适合游戏流量代理；TUN 模式则模拟 IP 层接口，更适合全局代理。根据用途不同可自由选择，但需管理员权限运行。<hr />    </div>
+        Clash 提供三种主要模式：Global（全局代理）、Rule（规则代理）和Direct（直连）。全局模式会让所有流量通过代理；规则模式根据规则文件自动分流；直连模式则完全不经过代理。用户可根据需求灵活切换。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hiddify Next 的多用户限速功能如何使用？</h5></div>
@@ -171,9 +171,29 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         Hiddify Next 支持在管理面板中为每个用户设置带宽上限。管理员可以按需分配速率或流量配额，防止单一用户占用过多资源，从而保持整体网络稳定。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>QuantumultX 的广告屏蔽原理是什么？</h5></div>
+    <div class="panel-body">
+        QuantumultX 使用分流规则与脚本结合的方式实现广告屏蔽。通过重写 HTTP 请求和阻止特定域名，它能有效去除 App 内广告或网页弹窗，提升浏览体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Mihomo 节点分类管理有什么作用？</h5></div>
     <div class="panel-body">
         节点分类可按地区、延迟或用途分组，结合策略组实现自动分流。方便管理大量节点，快速选择最优节点，提高访问速度和连接稳定性，优化网络管理效率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何给 Clash 添加自定义域名白名单以提升访问体验？</h5></div>
+    <div class="panel-body">
+        在 rules 中添加 `DOMAIN-SUFFIX,example.com,DIRECT` 或 `DOMAIN-KEYWORD,example,DIRECT` 条目，将常用且可靠的站点设为直连，可减少代理绕行延迟并避免因代理造成的登录/验证问题。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 的 TAP 模式与 TUN 模式区别是什么？</h5></div>
+    <div class="panel-body">
+        TAP 模式模拟以太网接口，适合游戏流量代理；TUN 模式则模拟 IP 层接口，更适合全局代理。根据用途不同可自由选择，但需管理员权限运行。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Potatso Lite 在新版 iOS 上无法连接怎么办？</h5></div>
+    <div class="panel-body">
+        苹果系统更新后，Potatso Lite 可能需要重新授权 VPN 权限。请删除旧的 VPN 配置，重新安装并导入节点。若仍无法使用，可尝试更换网络模式或等待开发者更新兼容版本。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 如何为游戏流量提供加速？</h5></div>
@@ -183,27 +203,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan 的连接失败常见原因有哪些？</h5></div>
     <div class="panel-body">
-        Trojan 连接失败可能由于伪装域名错误、TLS 证书过期、防火墙阻挡端口或服务器不可达。通过查看客户端日志可以定位具体原因，并对症下药解决问题。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的规则模式有哪些？</h5></div>
-    <div class="panel-body">
-        Clash 提供三种主要模式：Global（全局代理）、Rule（规则代理）和Direct（直连）。全局模式会让所有流量通过代理；规则模式根据规则文件自动分流；直连模式则完全不经过代理。用户可根据需求灵活切换。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 的广告屏蔽原理是什么？</h5></div>
-    <div class="panel-body">
-        QuantumultX 使用分流规则与脚本结合的方式实现广告屏蔽。通过重写 HTTP 请求和阻止特定域名，它能有效去除 App 内广告或网页弹窗，提升浏览体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何给 Clash 添加自定义域名白名单以提升访问体验？</h5></div>
-    <div class="panel-body">
-        在 rules 中添加 `DOMAIN-SUFFIX,example.com,DIRECT` 或 `DOMAIN-KEYWORD,example,DIRECT` 条目，将常用且可靠的站点设为直连，可减少代理绕行延迟并避免因代理造成的登录/验证问题。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 在新版 iOS 上无法连接怎么办？</h5></div>
-    <div class="panel-body">
-        苹果系统更新后，Potatso Lite 可能需要重新授权 VPN 权限。请删除旧的 VPN 配置，重新安装并导入节点。若仍无法使用，可尝试更换网络模式或等待开发者更新兼容版本。    </div>
+        Trojan 连接失败可能由于伪装域名错误、TLS 证书过期、防火墙阻挡端口或服务器不可达。通过查看客户端日志可以定位具体原因，并对症下药解决问题。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -232,16 +232,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-12-18-vpn-node.htm" title="12月18日免费VPN节点 | 19.4M/S|2025年V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点免费订阅链接地址">12月18日免费VPN节点 | 19.4M/S|2025年V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-14-vpn-github.htm" title="11月14日免费VPN节点 | 18.2M/S|2025年Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费订阅链接地址">11月14日免费VPN节点 | 18.2M/S|2025年Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-12-24-top-vpn.htm" title="12月24日免费VPN节点 | 20.5M/S|2025年Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点免费订阅链接地址">12月24日免费VPN节点 | 20.5M/S|2025年Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-31-node-share-links.htm" title="12月31日免费VPN节点 | 22.9M/S|2025年Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点免费订阅链接地址">12月31日免费VPN节点 | 22.9M/S|2025年Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-25-top-vpn-node.htm" title="12月25日免费VPN节点 | 22.9M/S|2025年Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点免费订阅链接地址">12月25日免费VPN节点 | 22.9M/S|2025年Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点免费订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-12-19-vpn-proxy.htm" title="12月19日免费VPN节点 | 23M/S|2025年Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点免费订阅链接地址">12月19日免费VPN节点 | 23M/S|2025年Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-13-free-node-subscribe.htm" title="11月13日免费VPN节点 | 22.3M/S|2025年Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点免费订阅链接地址">11月13日免费VPN节点 | 22.3M/S|2025年Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-5-top-vpn.htm" title="1月5日免费VPN节点 | 19M/S|2025年Clash节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点免费订阅链接地址">1月5日免费VPN节点 | 19M/S|2025年Clash节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-27-share-vpn.htm" title="12月27日免费VPN节点 | 22.7M/S|2025年Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点免费订阅链接地址">12月27日免费VPN节点 | 22.7M/S|2025年Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-2-node-share.htm" title="1月2日免费VPN节点 | 21.9M/S|2025年V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点免费订阅链接地址">1月2日免费VPN节点 | 21.9M/S|2025年V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-20-vpn-free.htm" title="12月20日免费VPN节点 | 22.6M/S|2025年SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点免费订阅链接地址">12月20日免费VPN节点 | 22.6M/S|2025年SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-25-top-vpn-node.htm" title="12月25日免费VPN节点 | 22.9M/S|2025年Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点免费订阅链接地址">12月25日免费VPN节点 | 22.9M/S|2025年Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-7-node-share-links.htm" title="1月7日免费VPN节点 | 21.6M/S|2025年Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点免费订阅链接地址">1月7日免费VPN节点 | 21.6M/S|2025年Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-22-free-node-subscribe.htm" title="12月22日免费VPN节点 | 20.8M/S|2025年Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点免费订阅链接地址">12月22日免费VPN节点 | 20.8M/S|2025年Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点免费订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-1-1-top-vpn.htm" title="1月1日免费VPN节点 | 22.2M/S|2025年V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点免费订阅链接地址">1月1日免费VPN节点 | 22.2M/S|2025年V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-5-vpn-proxy.htm" title="11月5日免费VPN节点 | 22.7M/S|2025年SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点免费订阅链接地址">11月5日免费VPN节点 | 22.7M/S|2025年SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-23-free-node-subscribe-links.htm" title="11月23日免费VPN节点 | 18.3M/S|2025年V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点免费订阅链接地址">11月23日免费VPN节点 | 18.3M/S|2025年V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点免费订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -253,13 +253,10 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
+                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                     </ul>
     </div>
