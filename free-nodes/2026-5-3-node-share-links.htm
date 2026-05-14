@@ -243,24 +243,9 @@ sudo apt install unzip tar
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 可以兼容旧版 Hiddify 吗？</h5></div>
-    <div class="panel-body">
-        Hiddify Next 完全向下兼容旧版配置，用户可直接导入原有 JSON 或 YAML 文件。系统会自动检测格式并进行迁移，非常适合升级旧环境到新版客户端。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 节点分组如何提升访问效率？</h5></div>
-    <div class="panel-body">
-        节点可按延迟、地区或用途分组，结合策略组实现自动分流。快速选择最优节点，可提高网页、视频和游戏访问速度，同时优化节点管理和维护效率，提升整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 的节点延迟过高怎么办？</h5></div>
     <div class="panel-body">
         可通过策略组切换低延迟节点，或调整传输协议和端口。检查服务器网络和防火墙设置，确保网络通畅。必要时可启用 MUX 功能减少短连接延迟，提高整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 是否支持订阅更新？</h5></div>
-    <div class="panel-body">
-        Potatso Lite 支持通过订阅链接更新节点。用户在设置中输入 URL 后，应用会定期拉取最新配置文件，实现自动更新节点信息。这让日常使用更加便捷和稳定。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 使用 mKCP 有哪些适合场景？</h5></div>
@@ -268,19 +253,19 @@ sudo apt install unzip tar
         mKCP 是基于 UDP 的传输协议，适合高丢包或不稳定网络环境。结合策略组使用，可优化网页浏览、视频播放和游戏体验，减少延迟和掉线，提高连接稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 日志太多如何调整日志级别？</h5></div>
-    <div class="panel-body">
-        在 Matsuri 或其内核配置中修改日志级别参数（如从 debug 降为 info 或 warning），同时限制日志轮转与最大文件大小。生产环境建议关闭 debug 日志以减少磁盘 I/O 与性能影响。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Quantumult X 中自定义脚本导致规则异常，该如何恢复？</h5></div>
     <div class="panel-body">
         先停用或删除最近添加的自定义脚本，重启应用并观察网络行为是否恢复。若无法恢复，备份并重置配置为默认，然后逐个添加脚本以定位导致异常的具体脚本并修复。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash for Android 如何导入订阅并自动更新？</h5></div>
+    <div class="panel-heading"><h5>Mihomo 节点分组如何提升访问效率？</h5></div>
     <div class="panel-body">
-        在 Clash for Android 的配置界面中选择“配置文件”→“新建配置”，粘贴订阅链接即可。启用自动更新功能后，软件会定期检查订阅源是否有新节点，并在后台自动替换旧配置，保持节点最新状态。<hr />    </div>
+        节点可按延迟、地区或用途分组，结合策略组实现自动分流。快速选择最优节点，可提高网页、视频和游戏访问速度，同时优化节点管理和维护效率，提升整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 与 Clash 有什么区别？</h5></div>
+    <div class="panel-body">
+        V2Ray 是一款代理核心工具，提供底层网络传输和加密支持；而 Clash 是一个多协议客户端，可以整合 V2Ray、Trojan、Shadowsocks 等多种协议。简而言之，V2Ray 负责“传输”，Clash 负责“管理与分流”。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 如何区分全局代理和规则代理？</h5></div>
@@ -288,9 +273,24 @@ sudo apt install unzip tar
         全局代理会将所有流量通过节点转发，而规则代理仅对指定 IP、端口或应用生效。用户可根据需求选择代理模式，实现流量优化和不同应用的最佳网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 与 Clash 有什么区别？</h5></div>
+    <div class="panel-heading"><h5>Potatso Lite 是否支持订阅更新？</h5></div>
     <div class="panel-body">
-        V2Ray 是一款代理核心工具，提供底层网络传输和加密支持；而 Clash 是一个多协议客户端，可以整合 V2Ray、Trojan、Shadowsocks 等多种协议。简而言之，V2Ray 负责“传输”，Clash 负责“管理与分流”。    </div>
+        Potatso Lite 支持通过订阅链接更新节点。用户在设置中输入 URL 后，应用会定期拉取最新配置文件，实现自动更新节点信息。这让日常使用更加便捷和稳定。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash for Android 如何导入订阅并自动更新？</h5></div>
+    <div class="panel-body">
+        在 Clash for Android 的配置界面中选择“配置文件”→“新建配置”，粘贴订阅链接即可。启用自动更新功能后，软件会定期检查订阅源是否有新节点，并在后台自动替换旧配置，保持节点最新状态。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 可以兼容旧版 Hiddify 吗？</h5></div>
+    <div class="panel-body">
+        Hiddify Next 完全向下兼容旧版配置，用户可直接导入原有 JSON 或 YAML 文件。系统会自动检测格式并进行迁移，非常适合升级旧环境到新版客户端。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Matsuri 日志太多如何调整日志级别？</h5></div>
+    <div class="panel-body">
+        在 Matsuri 或其内核配置中修改日志级别参数（如从 debug 降为 info 或 warning），同时限制日志轮转与最大文件大小。生产环境建议关闭 debug 日志以减少磁盘 I/O 与性能影响。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -319,16 +319,16 @@ sudo apt install unzip tar
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-4-17-node-share-links.htm" title="4月17日免费VPN节点 | 22.7M/S|2025年Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点/SSR节点免费订阅链接地址">4月17日免费VPN节点 | 22.7M/S|2025年Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点/SSR节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-29-mianfei-vpn.htm" title="4月29日免费VPN节点 | 18.4M/S|2025年Shadowrocket节点/Clash节点/Trojan节点/SSR节点/V2ray节点/Singbox节点免费订阅链接地址">4月29日免费VPN节点 | 18.4M/S|2025年Shadowrocket节点/Clash节点/Trojan节点/SSR节点/V2ray节点/Singbox节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-20-free-node-subscribe.htm" title="4月20日免费VPN节点 | 20.6M/S|2025年Shadowrocket节点/Trojan节点/Clash节点/V2ray节点/Singbox节点/SSR节点免费订阅链接地址">4月20日免费VPN节点 | 20.6M/S|2025年Shadowrocket节点/Trojan节点/Clash节点/V2ray节点/Singbox节点/SSR节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-9-share-vpn.htm" title="5月9日免费VPN节点 | 18.4M/S|2025年V2ray节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点免费订阅链接地址">5月9日免费VPN节点 | 18.4M/S|2025年V2ray节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-26-top-vpn-node.htm" title="4月26日免费VPN节点 | 19.6M/S|2025年Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费订阅链接地址">4月26日免费VPN节点 | 19.6M/S|2025年Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-8-free-vpn.htm" title="5月8日免费VPN节点 | 21.1M/S|2025年Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点免费订阅链接地址">5月8日免费VPN节点 | 21.1M/S|2025年Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点免费订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-15-vpn-node.htm" title="4月15日免费VPN节点 | 18.1M/S|2025年SSR节点/Trojan节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点免费订阅链接地址">4月15日免费VPN节点 | 18.1M/S|2025年SSR节点/Trojan节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-30-mianfei-vpn.htm" title="4月30日免费VPN节点 | 20.9M/S|2025年V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点免费订阅链接地址">4月30日免费VPN节点 | 20.9M/S|2025年V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-25-vpn-free.htm" title="4月25日免费VPN节点 | 19.1M/S|2025年Trojan节点/Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点免费订阅链接地址">4月25日免费VPN节点 | 19.1M/S|2025年Trojan节点/Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点免费订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-21-mianfei-vpn.htm" title="4月21日免费VPN节点 | 22.8M/S|2025年V2ray节点/Clash节点/Trojan节点/Shadowrocket节点/Singbox节点/SSR节点免费订阅链接地址">4月21日免费VPN节点 | 22.8M/S|2025年V2ray节点/Clash节点/Trojan节点/Shadowrocket节点/Singbox节点/SSR节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-9-free-node-subscribe.htm" title="4月9日免费VPN节点 | 22.4M/S|2025年SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/Singbox节点免费订阅链接地址">4月9日免费VPN节点 | 22.4M/S|2025年SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/Singbox节点免费订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-5-1-free-vpn-node.htm" title="5月1日免费VPN节点 | 19.6M/S|2025年Shadowrocket节点/SSR节点/Clash节点/Trojan节点/Singbox节点/V2ray节点免费订阅链接地址">5月1日免费VPN节点 | 19.6M/S|2025年Shadowrocket节点/SSR节点/Clash节点/Trojan节点/Singbox节点/V2ray节点免费订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-14-free-node-subscribe-links.htm" title="4月14日免费VPN节点 | 19.9M/S|2025年Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点免费订阅链接地址">4月14日免费VPN节点 | 19.9M/S|2025年Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-20-free-node-subscribe.htm" title="4月20日免费VPN节点 | 20.6M/S|2025年Shadowrocket节点/Trojan节点/Clash节点/V2ray节点/Singbox节点/SSR节点免费订阅链接地址">4月20日免费VPN节点 | 20.6M/S|2025年Shadowrocket节点/Trojan节点/Clash节点/V2ray节点/Singbox节点/SSR节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-18-vpn-github.htm" title="4月18日免费VPN节点 | 19.2M/S|2025年Clash节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点免费订阅链接地址">4月18日免费VPN节点 | 19.2M/S|2025年Clash节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-23-top-vpn-node.htm" title="4月23日免费VPN节点 | 18.5M/S|2025年Trojan节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点免费订阅链接地址">4月23日免费VPN节点 | 18.5M/S|2025年Trojan节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点免费订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -340,10 +340,10 @@ sudo apt install unzip tar
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">22</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                     </ul>
     </div>

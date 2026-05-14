@@ -359,16 +359,6 @@ A：可以。通过策略路由或MAC地址绑定设置，只让部分设备走V
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 与 Clash 的核心区别是什么？</h5></div>
-    <div class="panel-body">
-        Mellow 采用基于透明代理的架构，适合路由或系统级流量重定向，而 Clash 更偏向规则式应用代理。Mellow 的灵活性更高，但配置复杂；Clash 则兼顾易用性与功能扩展性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 节点延迟排序如何结合策略组使用？</h5></div>
-    <div class="panel-body">
-        Matsuri 会定期测速节点延迟，通过策略组自动选择低延迟、高稳定性的节点处理不同流量。无需手动切换，确保网页浏览、视频播放和游戏访问顺畅。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Hiddify Next 的主要用途是什么？</h5></div>
     <div class="panel-body">
         Hiddify Next 是 Hiddify 系列的新版本，集成了 VLESS、Trojan、Reality 等新型协议支持。它为用户提供一站式代理配置与分享功能，适合初学者快速上手使用。<hr />    </div>
@@ -379,9 +369,9 @@ A：可以。通过策略路由或MAC地址绑定设置，只让部分设备走V
         V2Ray 是一款代理核心工具，提供底层网络传输和加密支持；而 Clash 是一个多协议客户端，可以整合 V2Ray、Trojan、Shadowsocks 等多种协议。简而言之，V2Ray 负责“传输”，Clash 负责“管理与分流”。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 如何选择全局代理与规则代理模式？</h5></div>
+    <div class="panel-heading"><h5>Mellow 与 Clash 的核心区别是什么？</h5></div>
     <div class="panel-body">
-        全局代理适合所有流量走节点，如游戏和全局科学上网；规则代理仅针对指定应用、IP 或端口走节点，可优化带宽使用和访问效率，根据使用场景选择模式。<hr />    </div>
+        Mellow 采用基于透明代理的架构，适合路由或系统级流量重定向，而 Clash 更偏向规则式应用代理。Mellow 的灵活性更高，但配置复杂；Clash 则兼顾易用性与功能扩展性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>为什么使用 CDN 后仍然能被封？如何规避？</h5></div>
@@ -389,14 +379,9 @@ A：可以。通过策略路由或MAC地址绑定设置，只让部分设备走V
         若 CDN 回源 IP 或配置不当可能泄露真实服务器信息，或者 CDN 本身被目标防火墙识别。应启用完整的反向代理配置、隐藏源站 IP 与禁用不必要的服务，必要时使用多级中转或更换 CDN 供应商。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何给 Clash 添加自定义域名白名单以提升访问体验？</h5></div>
+    <div class="panel-heading"><h5>Mellow 的 TUN 模式能全局代理吗？</h5></div>
     <div class="panel-body">
-        在 rules 中添加 `DOMAIN-SUFFIX,example.com,DIRECT` 或 `DOMAIN-KEYWORD,example,DIRECT` 条目，将常用且可靠的站点设为直连，可减少代理绕行延迟并避免因代理造成的登录/验证问题。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 自动切换节点机制如何工作？</h5></div>
-    <div class="panel-body">
-        PassWall2 会根据节点延迟和丢包率测试结果，结合策略组自动选择最优节点处理流量。无需用户手动切换，保证网页、视频和游戏流量的速度和稳定性，优化网络体验。<hr />    </div>
+        TUN 模式拦截系统 IP 层流量，可实现全局代理，无需手动设置浏览器或应用代理。适合需要全局科学上网或游戏加速的场景，保证所有流量均走代理节点。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VLESS + XTLS 在移动网络的优势？</h5></div>
@@ -404,9 +389,24 @@ A：可以。通过策略路由或MAC地址绑定设置，只让部分设备走V
         XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定的移动网络。结合策略组和多节点切换，可提升网页浏览、视频播放和游戏的连接稳定性和流畅度。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 的 TUN 模式能全局代理吗？</h5></div>
+    <div class="panel-heading"><h5>如何给 Clash 添加自定义域名白名单以提升访问体验？</h5></div>
     <div class="panel-body">
-        TUN 模式拦截系统 IP 层流量，可实现全局代理，无需手动设置浏览器或应用代理。适合需要全局科学上网或游戏加速的场景，保证所有流量均走代理节点。    </div>
+        在 rules 中添加 `DOMAIN-SUFFIX,example.com,DIRECT` 或 `DOMAIN-KEYWORD,example,DIRECT` 条目，将常用且可靠的站点设为直连，可减少代理绕行延迟并避免因代理造成的登录/验证问题。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Matsuri 节点延迟排序如何结合策略组使用？</h5></div>
+    <div class="panel-body">
+        Matsuri 会定期测速节点延迟，通过策略组自动选择低延迟、高稳定性的节点处理不同流量。无需手动切换，确保网页浏览、视频播放和游戏访问顺畅。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 如何选择全局代理与规则代理模式？</h5></div>
+    <div class="panel-body">
+        全局代理适合所有流量走节点，如游戏和全局科学上网；规则代理仅针对指定应用、IP 或端口走节点，可优化带宽使用和访问效率，根据使用场景选择模式。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 自动切换节点机制如何工作？</h5></div>
+    <div class="panel-body">
+        PassWall2 会根据节点延迟和丢包率测试结果，结合策略组自动选择最优节点处理流量。无需用户手动切换，保证网页、视频和游戏流量的速度和稳定性，优化网络体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -435,16 +435,16 @@ A：可以。通过策略路由或MAC地址绑定设置，只让部分设备走V
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-3-6-top-vpn-node.htm" title="3月6日免费VPN节点 | 19.6M/S|2025年Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Trojan节点/Singbox节点免费订阅链接地址">3月6日免费VPN节点 | 19.6M/S|2025年Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Trojan节点/Singbox节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-10-mianfei-vpn.htm" title="3月10日免费VPN节点 | 19.6M/S|2025年Singbox节点/SSR节点/Trojan节点/V2ray节点/Shadowrocket节点/Clash节点免费订阅链接地址">3月10日免费VPN节点 | 19.6M/S|2025年Singbox节点/SSR节点/Trojan节点/V2ray节点/Shadowrocket节点/Clash节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-5-node-share.htm" title="5月5日免费VPN节点 | 18.5M/S|2025年Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Clash节点免费订阅链接地址">5月5日免费VPN节点 | 18.5M/S|2025年Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Clash节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-10-share-vpn.htm" title="5月10日免费VPN节点 | 19.9M/S|2025年SSR节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点免费订阅链接地址">5月10日免费VPN节点 | 19.9M/S|2025年SSR节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-1-free-vpn-node.htm" title="5月1日免费VPN节点 | 19.6M/S|2025年Shadowrocket节点/SSR节点/Clash节点/Trojan节点/Singbox节点/V2ray节点免费订阅链接地址">5月1日免费VPN节点 | 19.6M/S|2025年Shadowrocket节点/SSR节点/Clash节点/Trojan节点/Singbox节点/V2ray节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-28-free-node-subscribe-links.htm" title="4月28日免费VPN节点 | 20M/S|2025年SSR节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点免费订阅链接地址">4月28日免费VPN节点 | 20M/S|2025年SSR节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点免费订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-14-free-node-subscribe-links.htm" title="4月14日免费VPN节点 | 19.9M/S|2025年Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点免费订阅链接地址">4月14日免费VPN节点 | 19.9M/S|2025年Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-30-mianfei-vpn.htm" title="4月30日免费VPN节点 | 20.9M/S|2025年V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点免费订阅链接地址">4月30日免费VPN节点 | 20.9M/S|2025年V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-30-top-vpn-node.htm" title="3月30日免费VPN节点 | 20.8M/S|2025年Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Clash节点免费订阅链接地址">3月30日免费VPN节点 | 20.8M/S|2025年Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Clash节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-19-node-share-links.htm" title="4月19日免费VPN节点 | 18.6M/S|2025年Singbox节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Trojan节点免费订阅链接地址">4月19日免费VPN节点 | 18.6M/S|2025年Singbox节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Trojan节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-7-top-vpn-node.htm" title="3月7日免费VPN节点 | 21.4M/S|2025年Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点/Clash节点/SSR节点免费订阅链接地址">3月7日免费VPN节点 | 21.4M/S|2025年Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点/Clash节点/SSR节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-17-node-share-links.htm" title="4月17日免费VPN节点 | 22.7M/S|2025年Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点/SSR节点免费订阅链接地址">4月17日免费VPN节点 | 22.7M/S|2025年Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点/SSR节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-27-node-share-links.htm" title="4月27日免费VPN节点 | 23M/S|2025年V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点免费订阅链接地址">4月27日免费VPN节点 | 23M/S|2025年V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-22-vpn-free.htm" title="4月22日免费VPN节点 | 20.1M/S|2025年Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/V2ray节点/SSR节点免费订阅链接地址">4月22日免费VPN节点 | 20.1M/S|2025年Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/V2ray节点/SSR节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-18-vpn-github.htm" title="4月18日免费VPN节点 | 19.2M/S|2025年Clash节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点免费订阅链接地址">4月18日免费VPN节点 | 19.2M/S|2025年Clash节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点免费订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-24-free-node-subscribe.htm" title="4月24日免费VPN节点 | 22.3M/S|2025年Clash节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点免费订阅链接地址">4月24日免费VPN节点 | 22.3M/S|2025年Clash节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-21-mianfei-vpn.htm" title="4月21日免费VPN节点 | 22.8M/S|2025年V2ray节点/Clash节点/Trojan节点/Shadowrocket节点/Singbox节点/SSR节点免费订阅链接地址">4月21日免费VPN节点 | 22.8M/S|2025年V2ray节点/Clash节点/Trojan节点/Shadowrocket节点/Singbox节点/SSR节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-16-top-vpn.htm" title="4月16日免费VPN节点 | 21.1M/S|2025年Trojan节点/SSR节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点免费订阅链接地址">4月16日免费VPN节点 | 21.1M/S|2025年Trojan节点/SSR节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点免费订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -456,10 +456,10 @@ A：可以。通过策略路由或MAC地址绑定设置，只让部分设备走V
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                     </ul>
     </div>
