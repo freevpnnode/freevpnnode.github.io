@@ -282,42 +282,18 @@ sudo </span><span><span class="hljs-built_in">mv</span></span><span> v2ray /usr/
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
         <p>上一个：<a href="/free-nodes/2026-5-27-share-vpn.htm">5月27日免费VPN节点 | 19.5M/S|2025年Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Singbox节点免费订阅链接地址</a></p>
+        <p>下一个：<a href="/free-nodes/2026-5-29-free-vpn-node.htm">5月29日免费VPN节点 | 22.9M/S|2025年V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/SSR节点免费订阅链接地址</a></p>
     </div>
 <h4>FAQ</h4>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 支持节点分类管理吗？</h5></div>
-    <div class="panel-body">
-        支持。用户可将节点按地区、用途或延迟分类，结合策略组和规则进行分流。这样可以快速选择最佳节点，提高访问效率并便于维护大量节点。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 mKCP 参数如何调优以适应不稳定链路？</h5></div>
-    <div class="panel-body">
-        mKCP 有多个参数如 mtu、tinterval、uplink/downlink 等，可通过降低 mtu 与增大 mtu 重试间隔来适应高丢包场景；启用 FEC 与调整窗口大小能提高容错性，最终需在实际网络环境中逐步调试获得最佳值。<hr />    </div>
-</div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hiddify Next 如何设置用户带宽限制？</h5></div>
     <div class="panel-body">
         管理员可为每个用户设置上传和下载带宽上限。超出限制可自动降速或阻止访问，保证服务器资源合理分配，避免单用户占用过多带宽，提高整体公平性和使用效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的规则订阅更新有哪些注意事项？</h5></div>
+    <div class="panel-heading"><h5>Mellow 的全局代理如何启用？</h5></div>
     <div class="panel-body">
-        Clash 订阅更新需保证网络畅通，规则文件格式正确，并与客户端版本兼容。建议定期更新规则以获得最新节点和分流规则，同时注意避免频繁刷新造成性能问题。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + Reality 模式如何隐藏流量特征？</h5></div>
-    <div class="panel-body">
-        Reality 模式通过伪装握手和真实网站特征，使流量难以被 DPI 检测。结合策略组使用，可有效隐藏节点通信特征，同时保持安全和高速传输，适合高封锁环境。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 是否支持自定义 DNS 解析？</h5></div>
-    <div class="panel-body">
-        支持。用户可以在配置中指定 DNS 服务器或启用 DoH/DoT 功能，确保域名解析安全和快速，避免本地 DNS 污染或被劫持。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的加密方式推荐使用哪种？</h5></div>
-    <div class="panel-body">
-        SSR 支持多种加密方式，如 aes-256-cfb、chacha20、rc4-md5 等。建议优先选择 chacha20 系列算法，在移动设备上性能更佳，同时具有较强的安全性。<hr />    </div>
+        在 Mellow 中可通过开启 TUN 模式来启用全局代理。启用后，系统的所有流量都会经过代理转发，可实现全面科学上网。需注意系统防火墙可能会提示权限请求。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan-go 如何启用 WebSocket 支持？</h5></div>
@@ -325,14 +301,39 @@ sudo </span><span><span class="hljs-built_in">mv</span></span><span> v2ray /usr/
         在配置文件中将 transport 参数设置为 websocket，并指定 path 路径。客户端需同步使用相同路径及主机名。这样可将 Trojan 流量伪装为普通 WebSocket 通信以提升隐蔽性。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 的规则订阅更新有哪些注意事项？</h5></div>
+    <div class="panel-body">
+        Clash 订阅更新需保证网络畅通，规则文件格式正确，并与客户端版本兼容。建议定期更新规则以获得最新节点和分流规则，同时注意避免频繁刷新造成性能问题。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mihomo 支持节点分类管理吗？</h5></div>
+    <div class="panel-body">
+        支持。用户可将节点按地区、用途或延迟分类，结合策略组和规则进行分流。这样可以快速选择最佳节点，提高访问效率并便于维护大量节点。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekobox 是否支持自定义 DNS 解析？</h5></div>
+    <div class="panel-body">
+        支持。用户可以在配置中指定 DNS 服务器或启用 DoH/DoT 功能，确保域名解析安全和快速，避免本地 DNS 污染或被劫持。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的 mKCP 参数如何调优以适应不稳定链路？</h5></div>
+    <div class="panel-body">
+        mKCP 有多个参数如 mtu、tinterval、uplink/downlink 等，可通过降低 mtu 与增大 mtu 重试间隔来适应高丢包场景；启用 FEC 与调整窗口大小能提高容错性，最终需在实际网络环境中逐步调试获得最佳值。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的加密方式推荐使用哪种？</h5></div>
+    <div class="panel-body">
+        SSR 支持多种加密方式，如 aes-256-cfb、chacha20、rc4-md5 等。建议优先选择 chacha20 系列算法，在移动设备上性能更佳，同时具有较强的安全性。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 全局与规则代理如何选择？</h5></div>
     <div class="panel-body">
         全局代理将所有流量通过节点转发，适合游戏或全局科学上网；规则代理只针对指定应用、IP 或端口走节点，可优化带宽使用和访问效率，用户可根据需求灵活选择模式。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 的全局代理如何启用？</h5></div>
+    <div class="panel-heading"><h5>VLESS + Reality 模式如何隐藏流量特征？</h5></div>
     <div class="panel-body">
-        在 Mellow 中可通过开启 TUN 模式来启用全局代理。启用后，系统的所有流量都会经过代理转发，可实现全面科学上网。需注意系统防火墙可能会提示权限请求。    </div>
+        Reality 模式通过伪装握手和真实网站特征，使流量难以被 DPI 检测。结合策略组使用，可有效隐藏节点通信特征，同时保持安全和高速传输，适合高封锁环境。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -355,22 +356,43 @@ sudo </span><span><span class="hljs-built_in">mv</span></span><span> v2ray /usr/
 </div>
                         </div>
                         <div class="col-md-3">
-                            <div class="panel panel-default">
+                            <div class="panel panel-default box right-ad-box">
+    <div class="panel-heading">
+        <h3 class="panel-title">特别推荐</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="text-center">
+                <a href="javascript:;" class="js_to" data-url="https://www.futizi.net/?code=" data-type="Luniuyun" data-code="svvkQf3y" target="_blank">
+                    <img src="/assets/website/img/G/luniuyun.webp" class="avatar" alt="绿牛云">
+                </a>
+                <dl>
+                    <dt><a href="javascript:;" class="js_to" data-url="https://www.futizi.net/?code=" data-type="Luniuyun" data-code="svvkQf3y" target="_blank">绿牛云</a></dt>
+                    <dd>
+                        <p>高速稳定的网络加速</p>
+                        <p>畅享全球内容，访问 ChatGPT、TikTok、Google 等热门网站。
+全平台支持 · 7×24 专业客服 · 采用军工级安全加密传输技术。</p>                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">热门文章</h3>
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-5-8-free-vpn.htm" title="5月8日免费VPN节点 | 21.1M/S|2025年Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点免费订阅链接地址">5月8日免费VPN节点 | 21.1M/S|2025年Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-13-node-share.htm" title="4月13日免费VPN节点 | 19.6M/S|2025年SSR节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/V2ray节点免费订阅链接地址">4月13日免费VPN节点 | 19.6M/S|2025年SSR节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/V2ray节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-12-mianfei-vpn.htm" title="4月12日免费VPN节点 | 22.9M/S|2025年Clash节点/V2ray节点/Singbox节点/Trojan节点/SSR节点/Shadowrocket节点免费订阅链接地址">4月12日免费VPN节点 | 22.9M/S|2025年Clash节点/V2ray节点/Singbox节点/Trojan节点/SSR节点/Shadowrocket节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-20-share-vpn.htm" title="5月20日免费VPN节点 | 21M/S|2025年Singbox节点/SSR节点/Clash节点/V2ray节点/Trojan节点/Shadowrocket节点免费订阅链接地址">5月20日免费VPN节点 | 21M/S|2025年Singbox节点/SSR节点/Clash节点/V2ray节点/Trojan节点/Shadowrocket节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-21-free-node-subscribe-links.htm" title="5月21日免费VPN节点 | 19.6M/S|2025年Singbox节点/SSR节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点免费订阅链接地址">5月21日免费VPN节点 | 19.6M/S|2025年Singbox节点/SSR节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-14-free-node-subscribe-links.htm" title="4月14日免费VPN节点 | 19.9M/S|2025年Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点免费订阅链接地址">4月14日免费VPN节点 | 19.9M/S|2025年Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-23-top-vpn-node.htm" title="4月23日免费VPN节点 | 18.5M/S|2025年Trojan节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点免费订阅链接地址">4月23日免费VPN节点 | 18.5M/S|2025年Trojan节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-27-node-share-links.htm" title="4月27日免费VPN节点 | 23M/S|2025年V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点免费订阅链接地址">4月27日免费VPN节点 | 23M/S|2025年V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-13-free-node-subscribe.htm" title="5月13日免费VPN节点 | 22.9M/S|2025年Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点/Clash节点免费订阅链接地址">5月13日免费VPN节点 | 22.9M/S|2025年Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点/Clash节点免费订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-21-mianfei-vpn.htm" title="4月21日免费VPN节点 | 22.8M/S|2025年V2ray节点/Clash节点/Trojan节点/Shadowrocket节点/Singbox节点/SSR节点免费订阅链接地址">4月21日免费VPN节点 | 22.8M/S|2025年V2ray节点/Clash节点/Trojan节点/Shadowrocket节点/Singbox节点/SSR节点免费订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-3-node-share-links.htm" title="5月3日免费VPN节点 | 20.8M/S|2025年SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点免费订阅链接地址">5月3日免费VPN节点 | 20.8M/S|2025年SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点免费订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-27-share-vpn.htm" title="5月27日免费VPN节点 | 19.5M/S|2025年Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Singbox节点免费订阅链接地址">5月27日免费VPN节点 | 19.5M/S|2025年Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Singbox节点免费订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-17-vpn-github.htm" title="5月17日免费VPN节点 | 18.2M/S|2025年Trojan节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点免费订阅链接地址">5月17日免费VPN节点 | 18.2M/S|2025年Trojan节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点免费订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-8-free-vpn.htm" title="5月8日免费VPN节点 | 21.1M/S|2025年Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点免费订阅链接地址">5月8日免费VPN节点 | 21.1M/S|2025年Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点免费订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-2-free-vpn.htm" title="6月2日免费VPN节点 | 18.1M/S|2025年SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/Singbox节点免费订阅链接地址">6月2日免费VPN节点 | 18.1M/S|2025年SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/Singbox节点免费订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-14-free-node-subscribe.htm" title="5月14日免费VPN节点 | 19.5M/S|2025年Clash节点/Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/SSR节点免费订阅链接地址">5月14日免费VPN节点 | 19.5M/S|2025年Clash节点/Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/SSR节点免费订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-16-node-share-links.htm" title="5月16日免费VPN节点 | 18.8M/S|2025年SSR节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点免费订阅链接地址">5月16日免费VPN节点 | 18.8M/S|2025年SSR节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点免费订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-29-free-vpn-node.htm" title="5月29日免费VPN节点 | 22.9M/S|2025年V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/SSR节点免费订阅链接地址">5月29日免费VPN节点 | 22.9M/S|2025年V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/SSR节点免费订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-13-free-node-subscribe.htm" title="5月13日免费VPN节点 | 22.9M/S|2025年Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点/Clash节点免费订阅链接地址">5月13日免费VPN节点 | 22.9M/S|2025年Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点/Clash节点免费订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-30-vpn-node.htm" title="5月30日免费VPN节点 | 19.7M/S|2025年V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点/Shadowrocket节点免费订阅链接地址">5月30日免费VPN节点 | 19.7M/S|2025年V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点/Shadowrocket节点免费订阅链接地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -382,10 +404,10 @@ sudo </span><span><span class="hljs-built_in">mv</span></span><span> v2ray /usr/
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">28</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                     </ul>
     </div>
@@ -412,6 +434,9 @@ sudo </span><span><span class="hljs-built_in">mv</span></span><span> v2ray /usr/
                         <a href="/privacy.htm">隐私申明</a> |
                         <a href="/sitemap.xml">网站地图</a>
                     </p>
+                                        <div>特别推荐：<b><a href="javascript:;" class="js_to" data-url="https://www.futizi.net/?code=" data-type="Luniuyun" data-code="svvkQf3y" target="_blank">绿牛云</a></b> <p>高速稳定的网络加速</p>
+                        <p>畅享全球内容，访问 ChatGPT、TikTok、Google 等热门网站。
+全平台支持 · 7×24 专业客服 · 采用军工级安全加密传输技术。</p></div>
                                 <p>
                 <a href="/">Free VPN Node节点机场订阅官网</a> 版权所有 Powered by WordPress
             </p>
